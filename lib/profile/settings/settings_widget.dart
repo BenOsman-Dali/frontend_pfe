@@ -111,7 +111,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         padding: EdgeInsets.all(12.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            'jfy8czb7' /* Information and contact detail... */,
+                            'jfy8czb7' /* Edit your profile */,
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(

@@ -7,6 +7,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'welcome_page_model.dart';
 export 'welcome_page_model.dart';
 
@@ -37,7 +38,11 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
         lastName: valueOrDefault(currentUserDocument?.lastName, ''),
         email: currentUserEmail,
         phoneNumber: currentPhoneNumber,
+        id: currentUserUid,
       );
+
+      FFAppState().uid = currentUserUid;
+      safeSetState(() {});
     });
   }
 
@@ -50,6 +55,8 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -168,7 +175,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                   child: Container(
                     width: 200.0,
                     height: 200.0,
@@ -195,7 +202,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                       children: [
                         Text(
                           FFLocalizations.of(context).getText(
-                            'iop93sq8' /* Welcome Aboard  */,
+                            'iop93sq8' /* Welcome Aboard    */,
                           ),
                           textAlign: TextAlign.center,
                           style: FlutterFlowTheme.of(context)

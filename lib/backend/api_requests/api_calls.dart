@@ -11,7 +11,8 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 /// Start SpotsManagementAPI Group Code
 
 class SpotsManagementAPIGroup {
-  static String getBaseUrl() => '192.168.1.43:8080';
+  static String getBaseUrl() =>
+      'https://4d6a-2c0f-f698-4197-ccbb-f8d2-2c7d-be04-8cb5.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -176,7 +177,8 @@ class CreateParkingSpotCall {
 /// Start UserManagementAPI Group Code
 
 class UserManagementAPIGroup {
-  static String getBaseUrl() => '192.168.1.43:8080';
+  static String getBaseUrl() =>
+      'https://4d6a-2c0f-f698-4197-ccbb-f8d2-2c7d-be04-8cb5.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -217,20 +219,21 @@ class GetUserByIdCall {
 
 class UpdateUserCall {
   Future<ApiCallResponse> call({
-    double? id,
+    String? id = '',
     String? firstName = '',
     String? lastName = '',
     String? email = '',
-    int? phoneNumber,
+    String? phoneNumber = '',
   }) async {
     final baseUrl = UserManagementAPIGroup.getBaseUrl();
 
     final ffApiRequestBody = '''
 {
+  "id": "${escapeStringForJson(id)}",
   "firstName": "${escapeStringForJson(firstName)}",
   "lastName": "${escapeStringForJson(lastName)}",
   "email": "${escapeStringForJson(email)}",
-  "phoneNumber": ${phoneNumber}
+  "phoneNumber": "${escapeStringForJson(phoneNumber)}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'updateUser ',
@@ -310,11 +313,13 @@ class CreateUserCall {
     String? lastName = '',
     String? email = '',
     String? phoneNumber = '',
+    String? id = '',
   }) async {
     final baseUrl = UserManagementAPIGroup.getBaseUrl();
 
     final ffApiRequestBody = '''
 {
+  "id": "${escapeStringForJson(id)}",
   "firstName": "${escapeStringForJson(firstName)}",
   "lastName": "${escapeStringForJson(lastName)}",
   "email": "${escapeStringForJson(email)}",

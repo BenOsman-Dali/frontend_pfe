@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -500,6 +501,13 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                                       _model.phoneNumberTextController.text,
                                   vehicleBrand:
                                       _model.vehicleTextController.text,
+                                  uid: random_data.randomString(
+                                    5,
+                                    7,
+                                    true,
+                                    true,
+                                    true,
+                                  ),
                                 ));
 
                                 context.pushNamed(

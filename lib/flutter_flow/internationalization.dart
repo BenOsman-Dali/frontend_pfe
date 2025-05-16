@@ -292,14 +292,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'it': '',
     },
-    'ssn034iw': {
-      'en':
-          'Enter your current password and a new password to update your account security.',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
     'vvbjnfk1': {
       'en': 'First name *',
       'ar': '',
@@ -323,6 +315,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'mnxuq0ng': {
       'en': 'Phone number *',
+      'ar': '',
+      'es': '',
+      'fr': '',
+      'it': '',
+    },
+    'mx14zd81': {
+      'en': 'Vehicle brand *',
       'ar': '',
       'es': '',
       'fr': '',
@@ -451,7 +450,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
     'sdpin2m4': {
-      'en': 'You can\'t select more than 1 spot !',
+      'en': 'You can\'t select more than 1 spot for a single day !',
       'ar': '',
       'es': '',
       'fr': '',
@@ -905,7 +904,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
     'jfy8czb7': {
-      'en': 'Information and contact details',
+      'en': 'Edit your profile',
       'ar': '',
       'es': '',
       'fr': '',
@@ -2178,6 +2177,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'it': '',
     },
+    'irjhykg8': {
+      'en': 'for today, ',
+      'ar': '',
+      'es': '',
+      'fr': '',
+      'it': '',
+    },
     'l0bdsgeb': {
       'en': 'Constance',
       'ar': '',
@@ -2372,6 +2378,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'tpfpjw9u': {
       'en': 'Select your spots',
+      'ar': '',
+      'es': '',
+      'fr': '',
+      'it': '',
+    },
+    '6orwtesx': {
+      'en': 'for today, ',
       'ar': '',
       'es': '',
       'fr': '',
@@ -2720,7 +2733,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
     'iop93sq8': {
-      'en': 'Welcome Aboard ',
+      'en': 'Welcome Aboard   ',
       'ar': '',
       'es': '',
       'fr': '',
