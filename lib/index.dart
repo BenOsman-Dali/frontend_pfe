@@ -27,4 +27,3 @@ export '/authentification/user_details/user_details_widget.dart'
     show UserDetailsWidget;
 export '/authentification/welcome_page/welcome_page_widget.dart'
     show WelcomePageWidget;
-export '/test/test_widget.dart' show TestWidget;

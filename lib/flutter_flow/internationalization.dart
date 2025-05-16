@@ -170,20 +170,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'it': '',
     },
-    'mzbep0vo': {
-      'en': 'Available Parking',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
-    '6uwjllne': {
-      'en': '9 spots',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
     'y5c6w11d': {
       'en': 'Vermeg Factory',
       'ar': '',
@@ -2750,44 +2736,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8gvzcxs6': {
       'en': 'Go to Homepage',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
-  },
-  // test
-  {
-    'vfhm2gwa': {
-      'en': '',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
-    'n50x1vjc': {
-      'en': 'Tab 3',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
-    'gpyexq6w': {
-      'en': 'Tab 4',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
-    'fi3l3aie': {
-      'en': 'Tab 5',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
-    'a45tiul8': {
-      'en': 'Home',
       'ar': '',
       'es': '',
       'fr': '',
