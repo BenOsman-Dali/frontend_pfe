@@ -601,17 +601,18 @@ class _AutheeeWidgetState extends State<AutheeeWidget> {
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             font: GoogleFonts.roboto(
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w800,
                               fontStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .fontStyle,
                             ),
                             fontSize: 18.0,
                             letterSpacing: 0.0,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w800,
                             fontStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .fontStyle,
+                            decoration: TextDecoration.underline,
                           ),
                     ),
                   ),

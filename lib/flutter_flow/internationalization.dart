@@ -1439,7 +1439,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
     '26d6cjow': {
-      'en': 'Last Updated: April 9, 2025',
+      'en': 'Last Updated: May 17, 2025',
       'ar': '',
       'es': '',
       'fr': '',
@@ -1484,7 +1484,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'dpgi7964': {
       'en':
-          'OnSpot provides a platform for users to find, reserve, and pay for parking spaces. Users are responsible for providing accurate information when using the service and must comply with all parking regulations and rules.',
+          'OnSpot provides a platform for users to find and reserve parking spaces. Users are responsible for providing accurate information when using the service and must comply with all parking regulations and rules.',
       'ar': '',
       'es': '',
       'fr': '',
@@ -1505,23 +1505,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'it': '',
     },
-    'xrzyeg0e': {
-      'en': '4. Payments and Fees',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
-    'mrrliaoi': {
-      'en':
-          'Users agree to pay all fees associated with parking reservations made through the service. Fees are non-refundable except as required by law or as explicitly stated in our refund policy.',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
     'q8dhl204': {
-      'en': '5. Cancellation Policy',
+      'en': '4. Cancellation Policy',
       'ar': '',
       'es': '',
       'fr': '',
@@ -1536,7 +1521,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
     'nh5l0z8b': {
-      'en': '6. Limitation of Liability',
+      'en': '5. Limitation of Liability',
       'ar': '',
       'es': '',
       'fr': '',
@@ -1544,14 +1529,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'f1geodb1': {
       'en':
-          'ParkEasy shall not be liable for any indirect, incidental, special, consequential or punitive damages resulting from your use or inability to use the service, including but not limited to loss of profits, data, or goodwill.',
+          'OnSpot shall not be liable for any indirect, incidental, special, consequential or punitive damages resulting from your use or inability to use the service, including but not limited to loss of profits, data, or goodwill.',
       'ar': '',
       'es': '',
       'fr': '',
       'it': '',
     },
     '3jgnx5a6': {
-      'en': '7. Privacy Policy',
+      'en': '6. Privacy Policy',
       'ar': '',
       'es': '',
       'fr': '',
@@ -1566,7 +1551,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
     'tun7j5c7': {
-      'en': '8. Changes to Terms',
+      'en': '7. Changes to Terms',
       'ar': '',
       'es': '',
       'fr': '',
@@ -1581,7 +1566,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
     'kvfranpt': {
-      'en': '9. Governing Law',
+      'en': '8. Governing Law',
       'ar': '',
       'es': '',
       'fr': '',
@@ -1596,7 +1581,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
     'yjqcg3ur': {
-      'en': '10. Contact Us',
+      'en': '9. Contact Us',
       'ar': '',
       'es': '',
       'fr': '',
@@ -1605,14 +1590,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'l347nn6s': {
       'en':
           'If you have any questions about these Terms, please contact us at support@onspot.com',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
-    'evh5uu4w': {
-      'en':
-          'By using OnSpot, you acknowledge that you have read and understand these Terms and Conditions and agree to be bound by them.',
       'ar': '',
       'es': '',
       'fr': '',

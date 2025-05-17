@@ -93,7 +93,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '26d6cjow' /* Last Updated: April 9, 2025 */,
+                        '26d6cjow' /* Last Updated: May 17, 2025 */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             font: GoogleFonts.roboto(
@@ -317,55 +317,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'xrzyeg0e' /* 4. Payments and Fees */,
-                      ),
-                      style: FlutterFlowTheme.of(context).titleMedium.override(
-                            font: GoogleFonts.roboto(
-                              fontWeight: FontWeight.w600,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .fontStyle,
-                            ),
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w600,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleMedium
-                                .fontStyle,
-                          ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'mrrliaoi' /* Users agree to pay all fees as... */,
-                      ),
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.roboto(
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            letterSpacing: 0.0,
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                            lineHeight: 1.5,
-                          ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'q8dhl204' /* 5. Cancellation Policy */,
+                        'q8dhl204' /* 4. Cancellation Policy */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             font: GoogleFonts.roboto(
@@ -413,7 +365,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'nh5l0z8b' /* 6. Limitation of Liability */,
+                        'nh5l0z8b' /* 5. Limitation of Liability */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             font: GoogleFonts.roboto(
@@ -435,7 +387,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'f1geodb1' /* ParkEasy shall not be liable f... */,
+                        'f1geodb1' /* OnSpot shall not be liable for... */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             font: GoogleFonts.roboto(
@@ -461,7 +413,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '3jgnx5a6' /* 7. Privacy Policy */,
+                        '3jgnx5a6' /* 6. Privacy Policy */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             font: GoogleFonts.roboto(
@@ -509,7 +461,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'tun7j5c7' /* 8. Changes to Terms */,
+                        'tun7j5c7' /* 7. Changes to Terms */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             font: GoogleFonts.roboto(
@@ -557,7 +509,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'kvfranpt' /* 9. Governing Law */,
+                        'kvfranpt' /* 8. Governing Law */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             font: GoogleFonts.roboto(
@@ -605,7 +557,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'yjqcg3ur' /* 10. Contact Us */,
+                        'yjqcg3ur' /* 9. Contact Us */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             font: GoogleFonts.roboto(
@@ -647,51 +599,6 @@ class _TermsWidgetState extends State<TermsWidget> {
                                 .fontStyle,
                             lineHeight: 1.5,
                           ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).accent1,
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                'evh5uu4w' /* By using OnSpot, you acknowled... */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    font: GoogleFonts.interTight(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context).info,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                    lineHeight: 1.5,
-                                  ),
-                            ),
-                          ],
-                        ),
-                      ),
                     ),
                   ),
                 ],
