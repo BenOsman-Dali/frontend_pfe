@@ -163,13 +163,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'it': '',
     },
-    'gxpzkc3e': {
-      'en': 'V',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
     'y5c6w11d': {
       'en': 'Vermeg Factory',
       'ar': '',
@@ -292,6 +285,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'it': '',
     },
+    'sstrmm1r': {
+      'en': 'Changes Saved',
+      'ar': '',
+      'es': '',
+      'fr': '',
+      'it': '',
+    },
+    'v3fqwp08': {
+      'en': 'Your changes have been successfully saved.',
+      'ar': '',
+      'es': '',
+      'fr': '',
+      'it': '',
+    },
     'vvbjnfk1': {
       'en': 'First name *',
       'ar': '',
@@ -339,13 +346,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'cvbgeu9x': {
       'en': 'Select your spots',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
-    'wrlojv7t': {
-      'en': 'for today, ',
       'ar': '',
       'es': '',
       'fr': '',
@@ -1229,6 +1229,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '1eye5wgp': {
       'en': 'Change Password',
+      'ar': '',
+      'es': '',
+      'fr': '',
+      'it': '',
+    },
+    's5jlokau': {
+      'en': 'Changes Saved',
+      'ar': '',
+      'es': '',
+      'fr': '',
+      'it': '',
+    },
+    '17pk0ysi': {
+      'en': 'Your changes have been successfully saved.',
       'ar': '',
       'es': '',
       'fr': '',
@@ -2154,13 +2168,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'it': '',
     },
-    'irjhykg8': {
-      'en': 'for today, ',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
     'l0bdsgeb': {
       'en': 'Constance',
       'ar': '',
@@ -2231,21 +2238,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'it': '',
     },
-    'zcwmzmba': {
+    '48f40s7g': {
       'en': 'Legend',
       'ar': '',
       'es': '',
       'fr': '',
       'it': '',
     },
-    'jyvoerne': {
+    'qwijlr7v': {
       'en': 'Occupied spots',
       'ar': '',
       'es': '',
       'fr': '',
       'it': '',
     },
-    '79yyqnyd': {
+    'nnb4myws': {
       'en': 'Free spots',
       'ar': '',
       'es': '',
@@ -2360,13 +2367,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'it': '',
     },
-    '6orwtesx': {
-      'en': 'for today, ',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
     '70bq876v': {
       'en': 'Biwa',
       'ar': '',
@@ -2437,21 +2437,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'it': '',
     },
-    'bfrii2ft': {
+    'fp12ys2b': {
       'en': 'Legend',
       'ar': '',
       'es': '',
       'fr': '',
       'it': '',
     },
-    'f1u74cwc': {
+    'd7v99jil': {
       'en': 'Occupied spots',
       'ar': '',
       'es': '',
       'fr': '',
       'it': '',
     },
-    'w07uascs': {
+    'jfdmlm9c': {
       'en': 'Free spots',
       'ar': '',
       'es': '',

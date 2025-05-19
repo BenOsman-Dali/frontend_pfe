@@ -84,7 +84,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Color(0x2BFFFFFF),
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
@@ -128,59 +128,6 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                       .fontStyle,
                                 ),
                           ),
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                'irjhykg8' /* for today,  */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                    font: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.w600,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontStyle,
-                                  ),
-                            ),
-                            Text(
-                              dateTimeFormat(
-                                "d/M/y",
-                                getCurrentTimestamp,
-                                locale:
-                                    FFLocalizations.of(context).languageCode,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                    font: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.w600,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontStyle,
-                                  ),
-                            ),
-                          ],
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
@@ -337,8 +284,8 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().c1available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -482,8 +429,8 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().c2available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -627,8 +574,8 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().c3available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -772,8 +719,8 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().c4available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -917,8 +864,8 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().c5available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1062,8 +1009,8 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().c6available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1207,8 +1154,8 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().c7available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1352,8 +1299,8 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().c8available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1497,8 +1444,8 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().c9available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1644,7 +1591,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                   width: double.infinity,
                   height: 120.0,
                   decoration: BoxDecoration(
-                    color: Color(0x2BFFFFFF),
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
@@ -1666,7 +1613,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                             12.0, 10.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            'zcwmzmba' /* Legend */,
+                            '48f40s7g' /* Legend */,
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1696,7 +1643,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                   13.0, 17.0, 10.0, 2.0),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFEF0505),
+                                  color: Color(0xFFD81112),
                                   borderRadius: BorderRadius.circular(8.0),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context).primary,
@@ -1720,7 +1667,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                 0.0, 20.0, 224.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'jyvoerne' /* Occupied spots */,
+                                'qwijlr7v' /* Occupied spots */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -1753,7 +1700,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                   13.0, 17.0, 10.0, 2.0),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: Color(0xFF1AFF00),
+                                  color: Color(0xFF39D2C0),
                                   borderRadius: BorderRadius.circular(8.0),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context).primary,
@@ -1777,7 +1724,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                 0.0, 20.0, 255.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '79yyqnyd' /* Free spots */,
+                                'nnb4myws' /* Free spots */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium

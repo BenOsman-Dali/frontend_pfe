@@ -84,7 +84,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Color(0x2BFFFFFF),
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
@@ -128,59 +128,6 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                       .fontStyle,
                                 ),
                           ),
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                '6orwtesx' /* for today,  */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                    font: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.w600,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontStyle,
-                                  ),
-                            ),
-                            Text(
-                              dateTimeFormat(
-                                "d/M/y",
-                                getCurrentTimestamp,
-                                locale:
-                                    FFLocalizations.of(context).languageCode,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                    font: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.w600,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontStyle,
-                                  ),
-                            ),
-                          ],
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
@@ -338,8 +285,8 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().b1available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -483,8 +430,8 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().b2available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -628,8 +575,8 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().b3available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -773,8 +720,8 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().b4available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -918,8 +865,8 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().b5available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1063,8 +1010,8 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().b6available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1208,8 +1155,8 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().b7available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1353,8 +1300,8 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().b8available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1498,8 +1445,8 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().b9available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1645,7 +1592,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                   width: double.infinity,
                   height: 120.0,
                   decoration: BoxDecoration(
-                    color: Color(0x2BFFFFFF),
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
@@ -1667,7 +1614,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                             12.0, 10.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            'bfrii2ft' /* Legend */,
+                            'fp12ys2b' /* Legend */,
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1697,7 +1644,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                   13.0, 17.0, 10.0, 2.0),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFEF0505),
+                                  color: Color(0xFFD81112),
                                   borderRadius: BorderRadius.circular(8.0),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context).primary,
@@ -1721,7 +1668,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                 0.0, 20.0, 224.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'f1u74cwc' /* Occupied spots */,
+                                'd7v99jil' /* Occupied spots */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -1754,7 +1701,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                   13.0, 17.0, 10.0, 2.0),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: Color(0xFF1AFF00),
+                                  color: Color(0xFF39D2C0),
                                   borderRadius: BorderRadius.circular(8.0),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context).primary,
@@ -1778,7 +1725,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                 0.0, 20.0, 255.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'w07uascs' /* Free spots */,
+                                'jfdmlm9c' /* Free spots */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium

@@ -85,7 +85,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Color(0x2BFFFFFF),
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
@@ -129,59 +129,6 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                       .fontStyle,
                                 ),
                           ),
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                'wrlojv7t' /* for today,  */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                    font: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.w600,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontStyle,
-                                  ),
-                            ),
-                            Text(
-                              dateTimeFormat(
-                                "d/M/y",
-                                getCurrentTimestamp,
-                                locale:
-                                    FFLocalizations.of(context).languageCode,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                    font: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.w600,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontStyle,
-                                  ),
-                            ),
-                          ],
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
@@ -338,8 +285,8 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().n1Available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -483,8 +430,8 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().n2Available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -628,8 +575,8 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().n3Available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -773,8 +720,8 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().n4Available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -918,8 +865,8 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().n5Available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1063,8 +1010,8 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().n6Available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1225,8 +1172,8 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().n7Available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1370,8 +1317,8 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().n8Available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1515,8 +1462,8 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FFAppState().n9Available
-                                            ? Color(0xFF1AFF00)
-                                            : Color(0xFFEF0505),
+                                            ? Color(0xFF39D2C0)
+                                            : Color(0xFFD81112),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -1662,7 +1609,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                   width: double.infinity,
                   height: 120.0,
                   decoration: BoxDecoration(
-                    color: Color(0x2BFFFFFF),
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
@@ -1714,7 +1661,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                   13.0, 17.0, 10.0, 2.0),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFEF0505),
+                                  color: Color(0xFFD81112),
                                   borderRadius: BorderRadius.circular(8.0),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context).primary,
@@ -1771,7 +1718,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                   13.0, 17.0, 10.0, 2.0),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: Color(0xFF1AFF00),
+                                  color: Color(0xFF39D2C0),
                                   borderRadius: BorderRadius.circular(8.0),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context).primary,
@@ -1851,7 +1798,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                   .bodyMedium
                                   .fontStyle,
                             ),
-                            color: Color(0xFFFF0600),
+                            color: Color(0xFFD81112),
                             fontSize: 15.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -1884,7 +1831,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                   .bodyMedium
                                   .fontStyle,
                             ),
-                            color: Color(0xFFFF0600),
+                            color: Color(0xFFD81112),
                             fontSize: 15.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,

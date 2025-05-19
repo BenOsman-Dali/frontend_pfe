@@ -501,12 +501,15 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                                       _model.phoneNumberTextController.text,
                                   vehicleBrand:
                                       _model.vehicleTextController.text,
-                                  uid: random_data.randomString(
-                                    5,
-                                    7,
-                                    true,
-                                    true,
-                                    true,
+                                  uid: valueOrDefault<String>(
+                                    random_data.randomString(
+                                      4,
+                                      5,
+                                      true,
+                                      true,
+                                      true,
+                                    ),
+                                    'f22Cf',
                                   ),
                                 ));
 

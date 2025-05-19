@@ -516,6 +516,12 @@ class FFAppState extends ChangeNotifier {
     _uid = value;
     prefs.setString('ff_uid', value);
   }
+
+  bool _changesSaved = false;
+  bool get changesSaved => _changesSaved;
+  set changesSaved(bool value) {
+    _changesSaved = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

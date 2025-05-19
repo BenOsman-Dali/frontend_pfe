@@ -73,6 +73,24 @@ class _BookingDetailsWidgetState extends State<BookingDetailsWidget> {
               FFAppState().n7 = false;
               FFAppState().n8 = false;
               FFAppState().n9 = false;
+              FFAppState().c1 = false;
+              FFAppState().c2 = false;
+              FFAppState().c3 = false;
+              FFAppState().c4 = false;
+              FFAppState().c5 = false;
+              FFAppState().c6 = false;
+              FFAppState().c7 = false;
+              FFAppState().c8 = false;
+              FFAppState().c9 = false;
+              FFAppState().b1 = false;
+              FFAppState().b2 = false;
+              FFAppState().b3 = false;
+              FFAppState().b4 = false;
+              FFAppState().b5 = false;
+              FFAppState().b6 = false;
+              FFAppState().b7 = false;
+              FFAppState().b8 = false;
+              FFAppState().b9 = false;
               FFAppState().update(() {});
             },
           ),
