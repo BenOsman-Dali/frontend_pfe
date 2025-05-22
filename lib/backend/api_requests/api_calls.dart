@@ -12,7 +12,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class SpotsManagementAPIGroup {
   static String getBaseUrl() =>
-      'https://272b-2c0f-f698-4197-d35e-cc85-64d1-367-881e.ngrok-free.app';
+      'https://d3c3-2c0f-f698-41c7-4017-c5a0-bda7-73d2-633b.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -178,7 +178,7 @@ class CreateParkingSpotCall {
 
 class UserManagementAPIGroup {
   static String getBaseUrl() =>
-      'https://272b-2c0f-f698-4197-d35e-cc85-64d1-367-881e.ngrok-free.app';
+      'https://d3c3-2c0f-f698-41c7-4017-c5a0-bda7-73d2-633b.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
