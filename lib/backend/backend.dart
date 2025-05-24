@@ -6,7 +6,6 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'schema/util/firestore_util.dart';
 
 import 'schema/user_details_record.dart';
-import 'schema/reminders_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -16,7 +15,6 @@ export 'schema/util/firestore_util.dart';
 export 'schema/util/schema_util.dart';
 
 export 'schema/user_details_record.dart';
-export 'schema/reminders_record.dart';
 
 /// Functions to query UserDetailsRecords (as a Stream and as a Future).
 Future<int> queryUserDetailsRecordCount({
@@ -50,43 +48,6 @@ Future<List<UserDetailsRecord>> queryUserDetailsRecordOnce({
     queryCollectionOnce(
       UserDetailsRecord.collection,
       UserDetailsRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-/// Functions to query RemindersRecords (as a Stream and as a Future).
-Future<int> queryRemindersRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      RemindersRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<RemindersRecord>> queryRemindersRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      RemindersRecord.collection,
-      RemindersRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<RemindersRecord>> queryRemindersRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      RemindersRecord.collection,
-      RemindersRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

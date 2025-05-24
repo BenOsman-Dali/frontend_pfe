@@ -4,29 +4,35 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'autheee_model.dart';
-export 'autheee_model.dart';
+import 'signin_model.dart';
+export 'signin_model.dart';
 
-class AutheeeWidget extends StatefulWidget {
-  const AutheeeWidget({super.key});
+class SigninWidget extends StatefulWidget {
+  const SigninWidget({super.key});
 
-  static String routeName = 'autheee';
-  static String routePath = '/autheee';
+  static String routeName = 'signin';
+  static String routePath = '/signin';
 
   @override
-  State<AutheeeWidget> createState() => _AutheeeWidgetState();
+  State<SigninWidget> createState() => _SigninWidgetState();
 }
 
-class _AutheeeWidgetState extends State<AutheeeWidget> {
-  late AutheeeModel _model;
+class _SigninWidgetState extends State<SigninWidget> {
+  late SigninModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AutheeeModel());
+    _model = createModel(context, () => SigninModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      setDarkModeSetting(context, ThemeMode.light);
+    });
 
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
@@ -593,7 +599,7 @@ class _AutheeeWidgetState extends State<AutheeeWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      context.pushNamed(SignuppWidget.routeName);
+                      context.pushNamed(SignupWidget.routeName);
                     },
                     child: Text(
                       FFLocalizations.of(context).getText(

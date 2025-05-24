@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'autheee_widget.dart' show AutheeeWidget;
+import 'signin_widget.dart' show SigninWidget;
 import 'package:flutter/material.dart';
 
-class AutheeeModel extends FlutterFlowModel<AutheeeWidget> {
+class SigninModel extends FlutterFlowModel<SigninWidget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();

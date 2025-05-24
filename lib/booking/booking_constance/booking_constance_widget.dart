@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -31,27 +32,75 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (dateTimeFormat(
-            "d/M/y",
-            getCurrentTimestamp,
-            locale: FFLocalizations.of(context).languageCode,
-          ) !=
-          dateTimeFormat(
-            "d/M/y",
-            FFAppState().ParkingDate,
-            locale: FFLocalizations.of(context).languageCode,
-          )) {
-        FFAppState().c1available = true;
-        FFAppState().c2available = true;
-        FFAppState().c3available = true;
-        FFAppState().c4available = true;
-        FFAppState().c5available = true;
-        FFAppState().c6available = true;
-        FFAppState().c7available = true;
-        FFAppState().c8available = true;
-        FFAppState().c9available = true;
-        FFAppState().update(() {});
-      }
+      await Future.wait([
+        Future(() async {
+          _model.apiResultzg1 =
+              await SpotsManagementAPIGroup.getAllParkingSpotsCall.call();
+
+          if ((_model.apiResultzg1?.succeeded ?? true)) {
+            FFAppState().c1available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[9].available''',
+            );
+            FFAppState().c2available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[10].available''',
+            );
+            FFAppState().c3available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[11].available''',
+            );
+            FFAppState().c4available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[12].available''',
+            );
+            FFAppState().c5available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[13].available''',
+            );
+            FFAppState().c6available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[14].available''',
+            );
+            FFAppState().c7available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[15].available''',
+            );
+            FFAppState().c8available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[16].available''',
+            );
+            FFAppState().c9available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[17].available''',
+            );
+            safeSetState(() {});
+          }
+        }),
+        Future(() async {
+          if (dateTimeFormat(
+                "d/M/y",
+                getCurrentTimestamp,
+                locale: FFLocalizations.of(context).languageCode,
+              ) !=
+              dateTimeFormat(
+                "d/M/y",
+                FFAppState().ParkingDate,
+                locale: FFLocalizations.of(context).languageCode,
+              )) {
+            FFAppState().c1available = true;
+            FFAppState().c2available = true;
+            FFAppState().c3available = true;
+            FFAppState().c4available = true;
+            FFAppState().c5available = true;
+            FFAppState().c6available = true;
+            FFAppState().c7available = true;
+            FFAppState().c8available = true;
+            FFAppState().c9available = true;
+            FFAppState().update(() {});
+          }
+        }),
+      ]);
     });
   }
 
@@ -334,11 +383,12 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                                       Color(0x004B39EF),
                                                 ),
                                                 child: Checkbox(
-                                                  value: _model
-                                                      .checkbox1Value ??= false,
+                                                  value:
+                                                      _model.kurtcobainValue ??=
+                                                          false,
                                                   onChanged: (newValue) async {
                                                     safeSetState(() =>
-                                                        _model.checkbox1Value =
+                                                        _model.kurtcobainValue =
                                                             newValue!);
                                                     if (newValue!) {
                                                       FFAppState().selected =

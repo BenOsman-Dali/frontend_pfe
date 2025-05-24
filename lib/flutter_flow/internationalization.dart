@@ -981,7 +981,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
   },
-  // autheee
+  // signin
   {
     '8l8sk1iw': {
       'en': 'Fill out the information below in order to access your account.',
@@ -1082,7 +1082,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
   },
-  // signupp
+  // signup
   {
     'h7jres5u': {
       'en': 'Fill out the information below in order to access your account.',

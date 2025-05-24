@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -31,27 +32,77 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (dateTimeFormat(
-            "d/M/y",
-            getCurrentTimestamp,
-            locale: FFLocalizations.of(context).languageCode,
-          ) !=
-          dateTimeFormat(
-            "d/M/y",
-            FFAppState().ParkingDate,
-            locale: FFLocalizations.of(context).languageCode,
-          )) {
-        FFAppState().n1Available = true;
-        FFAppState().n5Available = true;
-        FFAppState().n6Available = true;
-        FFAppState().n2Available = true;
-        FFAppState().n3Available = true;
-        FFAppState().n4Available = true;
-        FFAppState().n7Available = true;
-        FFAppState().n9Available = true;
-        FFAppState().n8Available = true;
-        FFAppState().update(() {});
-      }
+      await Future.wait([
+        Future(() async {
+          _model.apiResultzg1 =
+              await SpotsManagementAPIGroup.getAllParkingSpotsCall.call();
+
+          if ((_model.apiResultzg1?.succeeded ?? true)) {
+            FFAppState().n1Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[0].available''',
+            );
+            FFAppState().n2Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[1].available''',
+            );
+            FFAppState().n3Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[2].available''',
+            );
+            FFAppState().n4Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[3].available''',
+            );
+            FFAppState().n5Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[4].available''',
+            );
+            FFAppState().n6Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[5].available''',
+            );
+            FFAppState().n7Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[6].available''',
+            );
+            FFAppState().n8Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[7].available''',
+            );
+            FFAppState().n9Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[8].available''',
+            );
+            safeSetState(() {});
+          }
+        }),
+        Future(() async {
+          if (dateTimeFormat(
+                "d/M/y",
+                getCurrentTimestamp,
+                locale: FFLocalizations.of(context).languageCode,
+              ) !=
+              dateTimeFormat(
+                "d/M/y",
+                FFAppState().ParkingDate,
+                locale: FFLocalizations.of(context).languageCode,
+              )) {
+            FFAppState().n1Available = true;
+            FFAppState().n6Available = true;
+            FFAppState().n2Available = true;
+            FFAppState().n3Available = true;
+            FFAppState().n4Available = true;
+            FFAppState().n7Available = true;
+            FFAppState().n9Available = true;
+            FFAppState().n8Available = true;
+            FFAppState().ParkingDate =
+                DateTime.fromMillisecondsSinceEpoch(1744379280000);
+            FFAppState().n5Available = true;
+            FFAppState().update(() {});
+          }
+        }),
+      ]);
     });
   }
 

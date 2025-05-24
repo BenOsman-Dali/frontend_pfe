@@ -9,8 +9,8 @@ export '/booking/booking_details/booking_details_widget.dart'
     show BookingDetailsWidget;
 export '/booking/checkout/checkout_widget.dart' show CheckoutWidget;
 export '/profile/settings/settings_widget.dart' show SettingsWidget;
-export '/authentification/autheee/autheee_widget.dart' show AutheeeWidget;
-export '/authentification/signupp/signupp_widget.dart' show SignuppWidget;
+export '/authentification/signin/signin_widget.dart' show SigninWidget;
+export '/authentification/signup/signup_widget.dart' show SignupWidget;
 export '/profile/change_password/change_password_widget.dart'
     show ChangePasswordWidget;
 export '/profile/notifications/notifications_widget.dart'

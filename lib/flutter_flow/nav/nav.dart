@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -76,13 +78,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : AutheeeWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : SigninWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : AutheeeWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : SigninWidget(),
         ),
         FFRoute(
           name: HomeWidget.routeName,
@@ -131,14 +133,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
         ),
         FFRoute(
-          name: AutheeeWidget.routeName,
-          path: AutheeeWidget.routePath,
-          builder: (context, params) => AutheeeWidget(),
+          name: SigninWidget.routeName,
+          path: SigninWidget.routePath,
+          builder: (context, params) => SigninWidget(),
         ),
         FFRoute(
-          name: SignuppWidget.routeName,
-          path: SignuppWidget.routePath,
-          builder: (context, params) => SignuppWidget(),
+          name: SignupWidget.routeName,
+          path: SignupWidget.routePath,
+          builder: (context, params) => SignupWidget(),
         ),
         FFRoute(
           name: ChangePasswordWidget.routeName,
@@ -319,6 +321,7 @@ class FFParameters {
     ParamType type, {
     bool isList = false,
     List<String>? collectionNamePath,
+    StructBuilder<T>? structBuilder,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -337,6 +340,7 @@ class FFParameters {
       type,
       isList,
       collectionNamePath: collectionNamePath,
+      structBuilder: structBuilder,
     );
   }
 }
@@ -370,7 +374,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/autheee';
+            return '/signin';
           }
           return null;
         },

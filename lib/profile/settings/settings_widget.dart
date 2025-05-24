@@ -589,7 +589,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                       GoRouter.of(context).clearRedirectLocation();
 
                       context.goNamedAuth(
-                          AutheeeWidget.routeName, context.mounted);
+                          SigninWidget.routeName, context.mounted);
                     },
                     child: Container(
                       width: 390.0,
@@ -638,7 +638,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                     ),
                   ),
                 ),
-              ],
+              ].addToEnd(SizedBox(height: 80.0)),
             ),
           ),
         ),

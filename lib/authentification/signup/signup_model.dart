@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'signupp_widget.dart' show SignuppWidget;
+import 'signup_widget.dart' show SignupWidget;
 import 'package:flutter/material.dart';
 
-class SignuppModel extends FlutterFlowModel<SignuppWidget> {
+class SignupModel extends FlutterFlowModel<SignupWidget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();

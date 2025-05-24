@@ -1,4 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -32,8 +35,34 @@ class _HomeWidgetState extends State<HomeWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      FFAppState().c5available = true;
-      safeSetState(() {});
+      _model.apiResultlcs = await UserManagementAPIGroup.getUserByIdCall.call(
+        id: FFAppState().uid,
+      );
+
+      if ((_model.apiResultlcs?.succeeded ?? true)) {
+        await currentUserReference!.update(createUserDetailsRecordData(
+          email: getJsonField(
+            (_model.apiResultlcs?.jsonBody ?? ''),
+            r'''$.email''',
+          ).toString().toString(),
+          uid: getJsonField(
+            (_model.apiResultlcs?.jsonBody ?? ''),
+            r'''$.id''',
+          ).toString().toString(),
+          firstName: getJsonField(
+            (_model.apiResultlcs?.jsonBody ?? ''),
+            r'''$.firstName''',
+          ).toString().toString(),
+          lastName: getJsonField(
+            (_model.apiResultlcs?.jsonBody ?? ''),
+            r'''$.lastName''',
+          ).toString().toString(),
+          phoneNumber: getJsonField(
+            (_model.apiResultlcs?.jsonBody ?? ''),
+            r'''$.phoneNumber''',
+          ).toString().toString(),
+        ));
+      }
     });
   }
 
@@ -58,53 +87,71 @@ class _HomeWidgetState extends State<HomeWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: PreferredSize(
           preferredSize:
-              Size.fromHeight(MediaQuery.sizeOf(context).height * 0.1),
+              Size.fromHeight(MediaQuery.sizeOf(context).height * 0.09),
           child: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             automaticallyImplyLeading: false,
             title: Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        FFLocalizations.of(context).getText(
-                          'z0b1zb7j' /* Welcome back */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.roboto(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
+              alignment: AlignmentDirectional(0.0, 1.0),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 5.0, 0.0, 0.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'z0b1zb7j' /* Welcome back */,
                             ),
-                      ),
-                      Text(
-                        FFLocalizations.of(context).getText(
-                          'e9tbagyz' /* Find your spot */,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  font: GoogleFonts.roboto(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
+                          ),
                         ),
-                        style: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .override(
-                              font: GoogleFonts.roboto(
+                        Text(
+                          FFLocalizations.of(context).getText(
+                            'e9tbagyz' /* Find your spot */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .headlineMedium
+                              .override(
+                                font: GoogleFonts.roboto(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineMedium
+                                      .fontStyle,
+                                ),
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .headlineMedium
                                     .fontWeight,
@@ -112,36 +159,83 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     .headlineMedium
                                     .fontStyle,
                               ),
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .headlineMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .headlineMedium
-                                  .fontStyle,
-                            ),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
-                    child: AuthUserStreamWidget(
-                      builder: (context) => Container(
-                        width: 50.0,
-                        height: 50.0,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
                         ),
-                        child: Image.network(
-                          currentUserPhoto,
-                          fit: BoxFit.cover,
+                      ].addToEnd(SizedBox(height: 11.0)),
+                    ),
+                    Stack(
+                      children: [
+                        if (Theme.of(context).brightness == Brightness.dark)
+                          Align(
+                            alignment: AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  50.0, 7.0, 0.0, 0.0),
+                              child: FlutterFlowIconButton(
+                                borderColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                borderRadius: 22.0,
+                                buttonSize: 44.86,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                icon: Icon(
+                                  Icons.light_mode,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 31.0,
+                                ),
+                                onPressed: () async {
+                                  setDarkModeSetting(context, ThemeMode.light);
+                                },
+                              ),
+                            ),
+                          ),
+                        if (Theme.of(context).brightness == Brightness.light)
+                          Align(
+                            alignment: AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  50.0, 7.0, 0.0, 0.0),
+                              child: FlutterFlowIconButton(
+                                borderColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                borderRadius: 22.0,
+                                buttonSize: 44.86,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                icon: Icon(
+                                  Icons.dark_mode,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 31.0,
+                                ),
+                                onPressed: () async {
+                                  setDarkModeSetting(context, ThemeMode.dark);
+                                },
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
+                      child: AuthUserStreamWidget(
+                        builder: (context) => Container(
+                          width: 44.9,
+                          height: 44.9,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: Image.network(
+                            currentUserPhoto,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             actions: [],

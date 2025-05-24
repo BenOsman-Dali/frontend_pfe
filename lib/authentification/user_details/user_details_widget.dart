@@ -504,9 +504,9 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                                   uid: valueOrDefault<String>(
                                     random_data.randomString(
                                       4,
-                                      5,
-                                      true,
-                                      true,
+                                      7,
+                                      false,
+                                      false,
                                       true,
                                     ),
                                     'f22Cf',

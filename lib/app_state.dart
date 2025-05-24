@@ -105,6 +105,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _uid = prefs.getString('ff_uid') ?? _uid;
     });
+    _safeInit(() {
+      _esp8266 = prefs.getBool('ff_esp8266') ?? _esp8266;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -521,6 +524,13 @@ class FFAppState extends ChangeNotifier {
   bool get changesSaved => _changesSaved;
   set changesSaved(bool value) {
     _changesSaved = value;
+  }
+
+  bool _esp8266 = false;
+  bool get esp8266 => _esp8266;
+  set esp8266(bool value) {
+    _esp8266 = value;
+    prefs.setBool('ff_esp8266', value);
   }
 }
 

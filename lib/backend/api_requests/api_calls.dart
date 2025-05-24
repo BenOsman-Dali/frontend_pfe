@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
@@ -12,7 +13,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class SpotsManagementAPIGroup {
   static String getBaseUrl() =>
-      'https://d3c3-2c0f-f698-41c7-4017-c5a0-bda7-73d2-633b.ngrok-free.app';
+      'https://0bdb-2c0f-f698-41c7-4017-fc35-eedc-9daa-d07.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -51,6 +52,11 @@ class GetParkingSpotByIdCall {
       alwaysAllowBody: false,
     );
   }
+
+  bool? available(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$.available''',
+      ));
 }
 
 class UpdateParkingSpotCall {
@@ -134,6 +140,16 @@ class GetAllParkingSpotsCall {
       alwaysAllowBody: false,
     );
   }
+
+  List<bool>? availability(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].available''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<bool>(x))
+          .withoutNulls
+          .toList();
 }
 
 class CreateParkingSpotCall {
@@ -178,7 +194,7 @@ class CreateParkingSpotCall {
 
 class UserManagementAPIGroup {
   static String getBaseUrl() =>
-      'https://d3c3-2c0f-f698-41c7-4017-c5a0-bda7-73d2-633b.ngrok-free.app';
+      'https://0bdb-2c0f-f698-41c7-4017-fc35-eedc-9daa-d07.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -193,7 +209,7 @@ class UserManagementAPIGroup {
 
 class GetUserByIdCall {
   Future<ApiCallResponse> call({
-    int? id,
+    String? id = '',
   }) async {
     final baseUrl = UserManagementAPIGroup.getBaseUrl();
 
@@ -215,6 +231,27 @@ class GetUserByIdCall {
       alwaysAllowBody: false,
     );
   }
+
+  String? userEmail(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.email''',
+      ));
+  String? userFirstName(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.firstName''',
+      ));
+  String? userID(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.id''',
+      ));
+  String? userLastName(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.lastName''',
+      ));
+  String? userPhonNumber(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.phoneNumber''',
+      ));
 }
 
 class UpdateUserCall {

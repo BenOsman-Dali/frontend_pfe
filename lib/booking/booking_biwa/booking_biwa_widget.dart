@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -31,27 +32,75 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (dateTimeFormat(
-            "d/M/y",
-            getCurrentTimestamp,
-            locale: FFLocalizations.of(context).languageCode,
-          ) !=
-          dateTimeFormat(
-            "d/M/y",
-            FFAppState().ParkingDate,
-            locale: FFLocalizations.of(context).languageCode,
-          )) {
-        FFAppState().b1available = true;
-        FFAppState().b2available = true;
-        FFAppState().b3available = true;
-        FFAppState().b4available = true;
-        FFAppState().b5available = true;
-        FFAppState().b6available = true;
-        FFAppState().b7available = true;
-        FFAppState().b8available = true;
-        FFAppState().b9available = true;
-        FFAppState().update(() {});
-      }
+      await Future.wait([
+        Future(() async {
+          _model.apiResultzg1 =
+              await SpotsManagementAPIGroup.getAllParkingSpotsCall.call();
+
+          if ((_model.apiResultzg1?.succeeded ?? true)) {
+            FFAppState().b1available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[18].available''',
+            );
+            FFAppState().b2available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[19].available''',
+            );
+            FFAppState().b3available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[20].available''',
+            );
+            FFAppState().b4available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[21].available''',
+            );
+            FFAppState().b5available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[22].available''',
+            );
+            FFAppState().b6available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[23].available''',
+            );
+            FFAppState().b7available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[24].available''',
+            );
+            FFAppState().b8available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[25].available''',
+            );
+            FFAppState().b9available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[26].available''',
+            );
+            safeSetState(() {});
+          }
+        }),
+        Future(() async {
+          if (dateTimeFormat(
+                "d/M/y",
+                getCurrentTimestamp,
+                locale: FFLocalizations.of(context).languageCode,
+              ) !=
+              dateTimeFormat(
+                "d/M/y",
+                FFAppState().ParkingDate,
+                locale: FFLocalizations.of(context).languageCode,
+              )) {
+            FFAppState().b1available = true;
+            FFAppState().b2available = true;
+            FFAppState().b3available = true;
+            FFAppState().b4available = true;
+            FFAppState().b5available = true;
+            FFAppState().b6available = true;
+            FFAppState().b7available = true;
+            FFAppState().b8available = true;
+            FFAppState().b9available = true;
+            FFAppState().update(() {});
+          }
+        }),
+      ]);
     });
   }
 

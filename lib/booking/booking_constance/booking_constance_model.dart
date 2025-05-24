@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'booking_constance_widget.dart' show BookingConstanceWidget;
@@ -6,8 +7,10 @@ import 'package:flutter/material.dart';
 class BookingConstanceModel extends FlutterFlowModel<BookingConstanceWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for Checkbox1 widget.
-  bool? checkbox1Value;
+  // Stores action output result for [Backend Call - API (getAllParkingSpots)] action in booking_constance widget.
+  ApiCallResponse? apiResultzg1;
+  // State field(s) for kurtcobain widget.
+  bool? kurtcobainValue;
   // State field(s) for Checkbox2 widget.
   bool? checkbox2Value;
   // State field(s) for Checkbox3 widget.

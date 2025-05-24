@@ -8,28 +8,28 @@ import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'signupp_model.dart';
-export 'signupp_model.dart';
+import 'signup_model.dart';
+export 'signup_model.dart';
 
-class SignuppWidget extends StatefulWidget {
-  const SignuppWidget({super.key});
+class SignupWidget extends StatefulWidget {
+  const SignupWidget({super.key});
 
-  static String routeName = 'signupp';
-  static String routePath = '/signupp';
+  static String routeName = 'signup';
+  static String routePath = '/signup';
 
   @override
-  State<SignuppWidget> createState() => _SignuppWidgetState();
+  State<SignupWidget> createState() => _SignupWidgetState();
 }
 
-class _SignuppWidgetState extends State<SignuppWidget> {
-  late SignuppModel _model;
+class _SignupWidgetState extends State<SignupWidget> {
+  late SignupModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SignuppModel());
+    _model = createModel(context, () => SignupModel());
 
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
