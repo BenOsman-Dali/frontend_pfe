@@ -8,6 +8,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'checkout_model.dart';
 export 'checkout_model.dart';
 
@@ -149,57 +150,6 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               fontSize: 20.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                      ),
-                    ),
-                    Opacity(
-                      opacity: 0.8,
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            '1004im04' /* You will receive  your e-ticke... */,
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.roboto(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
-                      child: Text(
-                        currentUserEmail,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
                               fontStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .fontStyle,
@@ -378,6 +328,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                         if (FFAppState().n1 == true) {
                           FFAppState().n1Available = false;
                           safeSetState(() {});
+                          _model.apiResult32t = await SpotsManagementAPIGroup
+                              .updateParkingSpotCall
+                              .call(
+                            id: 1,
+                            available: FFAppState().n1Available,
+                          );
                         }
                       }),
                       Future(() async {
@@ -676,6 +632,18 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                         }
                       }),
                     ]);
+                    await launchUrl(Uri(
+                        scheme: 'mailto',
+                        path: currentUserEmail,
+                        query: {
+                          'subject': 'Your Parking Spot Booking Confirmation',
+                          'body':
+                              'Hi ${valueOrDefault(currentUserDocument?.firstName, '')}!Thank you for booking your parking spot! Your reservation has been confirmed with the following details:',
+                        }
+                            .entries
+                            .map((MapEntry<String, String> e) =>
+                                '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                            .join('&')));
 
                     context.pushNamed(ConfirmationWidget.routeName);
 

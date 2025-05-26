@@ -1,10 +1,8 @@
-import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'booking_constance_model.dart';
@@ -29,79 +27,6 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => BookingConstanceModel());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await Future.wait([
-        Future(() async {
-          _model.apiResultzg1 =
-              await SpotsManagementAPIGroup.getAllParkingSpotsCall.call();
-
-          if ((_model.apiResultzg1?.succeeded ?? true)) {
-            FFAppState().c1available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[9].available''',
-            );
-            FFAppState().c2available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[10].available''',
-            );
-            FFAppState().c3available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[11].available''',
-            );
-            FFAppState().c4available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[12].available''',
-            );
-            FFAppState().c5available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[13].available''',
-            );
-            FFAppState().c6available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[14].available''',
-            );
-            FFAppState().c7available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[15].available''',
-            );
-            FFAppState().c8available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[16].available''',
-            );
-            FFAppState().c9available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[17].available''',
-            );
-            safeSetState(() {});
-          }
-        }),
-        Future(() async {
-          if (dateTimeFormat(
-                "d/M/y",
-                getCurrentTimestamp,
-                locale: FFLocalizations.of(context).languageCode,
-              ) !=
-              dateTimeFormat(
-                "d/M/y",
-                FFAppState().ParkingDate,
-                locale: FFLocalizations.of(context).languageCode,
-              )) {
-            FFAppState().c1available = true;
-            FFAppState().c2available = true;
-            FFAppState().c3available = true;
-            FFAppState().c4available = true;
-            FFAppState().c5available = true;
-            FFAppState().c6available = true;
-            FFAppState().c7available = true;
-            FFAppState().c8available = true;
-            FFAppState().c9available = true;
-            FFAppState().update(() {});
-          }
-        }),
-      ]);
-    });
   }
 
   @override
@@ -346,20 +271,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().c1available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -492,20 +404,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().c2available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -637,20 +536,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().c3available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -782,20 +668,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().c4available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -927,20 +800,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().c5available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -1072,20 +932,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().c6available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -1217,20 +1064,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().c7available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -1362,20 +1196,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().c8available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -1507,20 +1328,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().c9available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -1799,16 +1607,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                   ),
                 ),
               ),
-              if ((dateTimeFormat(
-                        "d/M/y",
-                        FFAppState().ParkingDate,
-                        locale: FFLocalizations.of(context).languageCode,
-                      ) ==
-                      dateTimeFormat(
-                        "d/M/y",
-                        getCurrentTimestamp,
-                        locale: FFLocalizations.of(context).languageCode,
-                      )) &&
+              if (FFAppState().booked &&
                   responsiveVisibility(
                     context: context,
                     tabletLandscape: false,
@@ -1830,7 +1629,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                   .bodyMedium
                                   .fontStyle,
                             ),
-                            color: Color(0xFFFF0600),
+                            color: Color(0xFFD81112),
                             fontSize: 15.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -1863,7 +1662,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                                   .bodyMedium
                                   .fontStyle,
                             ),
-                            color: Color(0xFFFF0600),
+                            color: Color(0xFFD81112),
                             fontSize: 15.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -1882,7 +1681,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      if (FFAppState().selected == 1)
+                      if ((FFAppState().selected == 1) && !FFAppState().booked)
                         Text(
                           FFLocalizations.of(context).getText(
                             '788acnsy' /* selected spot */,
@@ -2123,17 +1922,7 @@ class _BookingConstanceWidgetState extends State<BookingConstanceWidget> {
                     ),
                 ],
               ),
-              if ((FFAppState().selected == 1) &&
-                  (dateTimeFormat(
-                        "d/M/y",
-                        FFAppState().ParkingDate,
-                        locale: FFLocalizations.of(context).languageCode,
-                      ) !=
-                      dateTimeFormat(
-                        "d/M/y",
-                        getCurrentTimestamp,
-                        locale: FFLocalizations.of(context).languageCode,
-                      )))
+              if ((FFAppState().selected == 1) && !FFAppState().booked)
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(

@@ -1,4 +1,3 @@
-import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'booking_biwa_widget.dart' show BookingBiwaWidget;
@@ -7,8 +6,6 @@ import 'package:flutter/material.dart';
 class BookingBiwaModel extends FlutterFlowModel<BookingBiwaWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (getAllParkingSpots)] action in booking_biwa widget.
-  ApiCallResponse? apiResultzg1;
   // State field(s) for Checkbox1 widget.
   bool? checkbox1Value;
   // State field(s) for Checkbox2 widget.

@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/foundation.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
@@ -13,7 +12,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class SpotsManagementAPIGroup {
   static String getBaseUrl() =>
-      'https://5e13-2c0f-f698-41c7-4017-e9a6-424c-242a-15e.ngrok-free.app';
+      'https://1558-2c0f-f698-41c7-4017-ac7e-d406-41e2-feec.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -26,6 +25,7 @@ class SpotsManagementAPIGroup {
   static GetAllParkingSpotsCall getAllParkingSpotsCall =
       GetAllParkingSpotsCall();
   static CreateParkingSpotCall createParkingSpotCall = CreateParkingSpotCall();
+  static ResetAllSpotsCall resetAllSpotsCall = ResetAllSpotsCall();
 }
 
 class GetParkingSpotByIdCall {
@@ -188,13 +188,38 @@ class CreateParkingSpotCall {
   }
 }
 
+class ResetAllSpotsCall {
+  Future<ApiCallResponse> call() async {
+    final baseUrl = SpotsManagementAPIGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'resetAllSpots',
+      apiUrl: '${baseUrl}/api/spots/reset',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'ngrok-skip-browser-warning': 'true',
+      },
+      params: {},
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 /// End SpotsManagementAPI Group Code
 
 /// Start UserManagementAPI Group Code
 
 class UserManagementAPIGroup {
   static String getBaseUrl() =>
-      'https://0bdb-2c0f-f698-41c7-4017-fc35-eedc-9daa-d07.ngrok-free.app';
+      'https://1558-2c0f-f698-41c7-4017-ac7e-d406-41e2-feec.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',

@@ -285,7 +285,7 @@ class _BookingDetailsWidgetState extends State<BookingDetailsWidget> {
                                       Text(
                                         dateTimeFormat(
                                           "yMMMd",
-                                          _model.datePicked,
+                                          getCurrentTimestamp,
                                           locale: FFLocalizations.of(context)
                                               .languageCode,
                                         ),
@@ -316,44 +316,11 @@ class _BookingDetailsWidgetState extends State<BookingDetailsWidget> {
                                                       .fontStyle,
                                             ),
                                       ),
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          final _datePickedDate =
-                                              await showDatePicker(
-                                            context: context,
-                                            initialDate: getCurrentTimestamp,
-                                            firstDate: (getCurrentTimestamp ??
-                                                DateTime(1900)),
-                                            lastDate: (getCurrentTimestamp ??
-                                                DateTime(2050)),
-                                          );
-
-                                          if (_datePickedDate != null) {
-                                            safeSetState(() {
-                                              _model.datePicked = DateTime(
-                                                _datePickedDate.year,
-                                                _datePickedDate.month,
-                                                _datePickedDate.day,
-                                              );
-                                            });
-                                          } else if (_model.datePicked !=
-                                              null) {
-                                            safeSetState(() {
-                                              _model.datePicked =
-                                                  getCurrentTimestamp;
-                                            });
-                                          }
-                                        },
-                                        child: Icon(
-                                          Icons.calendar_today_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          size: 24.0,
-                                        ),
+                                      Icon(
+                                        Icons.calendar_today_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
                                       ),
                                     ],
                                   ),
@@ -1221,60 +1188,54 @@ class _BookingDetailsWidgetState extends State<BookingDetailsWidget> {
                     ),
                   ),
                 ),
-                if (_model.datePicked != null)
-                  FFButtonWidget(
-                    onPressed: () async {
-                      context.pushNamed(
-                        CheckoutWidget.routeName,
-                        extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
-                            hasTransition: true,
-                            transitionType: PageTransitionType.bottomToTop,
-                          ),
-                        },
-                      );
-
-                      FFAppState().ParkingDate = _model.datePicked;
-                      safeSetState(() {});
-                    },
-                    text: FFLocalizations.of(context).getText(
-                      'e4g9tf6b' /* Continue my order */,
-                    ),
-                    options: FFButtonOptions(
-                      width: double.infinity,
-                      height: 56.0,
-                      padding: EdgeInsets.all(8.0),
-                      iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).secondaryText,
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                font: GoogleFonts.roboto(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
-                                color: FlutterFlowTheme.of(context).info,
-                                fontSize: 20.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontStyle,
-                              ),
-                      elevation: 2.0,
-                      borderSide: BorderSide(
-                        color: Colors.transparent,
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
+                FFButtonWidget(
+                  onPressed: () async {
+                    context.pushNamed(
+                      CheckoutWidget.routeName,
+                      extra: <String, dynamic>{
+                        kTransitionInfoKey: TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.bottomToTop,
+                        ),
+                      },
+                    );
+                  },
+                  text: FFLocalizations.of(context).getText(
+                    'e4g9tf6b' /* Continue my order */,
                   ),
+                  options: FFButtonOptions(
+                    width: double.infinity,
+                    height: 56.0,
+                    padding: EdgeInsets.all(8.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: FlutterFlowTheme.of(context).secondaryText,
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          font: GoogleFonts.roboto(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .fontStyle,
+                          ),
+                          color: FlutterFlowTheme.of(context).info,
+                          fontSize: 20.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                        ),
+                    elevation: 2.0,
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                ),
               ],
             ),
           ),

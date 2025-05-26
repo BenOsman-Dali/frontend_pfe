@@ -35,34 +35,187 @@ class _HomeWidgetState extends State<HomeWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.apiResultlcs = await UserManagementAPIGroup.getUserByIdCall.call(
-        id: FFAppState().uid,
-      );
+      await Future.wait([
+        Future(() async {
+          _model.apiResultzg1 =
+              await SpotsManagementAPIGroup.getAllParkingSpotsCall.call();
 
-      if ((_model.apiResultlcs?.succeeded ?? true)) {
-        await currentUserReference!.update(createUserDetailsRecordData(
-          email: getJsonField(
-            (_model.apiResultlcs?.jsonBody ?? ''),
-            r'''$.email''',
-          ).toString().toString(),
-          uid: getJsonField(
-            (_model.apiResultlcs?.jsonBody ?? ''),
-            r'''$.id''',
-          ).toString().toString(),
-          firstName: getJsonField(
-            (_model.apiResultlcs?.jsonBody ?? ''),
-            r'''$.firstName''',
-          ).toString().toString(),
-          lastName: getJsonField(
-            (_model.apiResultlcs?.jsonBody ?? ''),
-            r'''$.lastName''',
-          ).toString().toString(),
-          phoneNumber: getJsonField(
-            (_model.apiResultlcs?.jsonBody ?? ''),
-            r'''$.phoneNumber''',
-          ).toString().toString(),
-        ));
-      }
+          if ((_model.apiResultzg1?.succeeded ?? true)) {
+            FFAppState().n1Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[0].available''',
+            );
+            FFAppState().n2Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[1].available''',
+            );
+            FFAppState().n3Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[2].available''',
+            );
+            FFAppState().n4Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[3].available''',
+            );
+            FFAppState().n5Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[4].available''',
+            );
+            FFAppState().n6Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[5].available''',
+            );
+            FFAppState().n7Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[6].available''',
+            );
+            FFAppState().n8Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[7].available''',
+            );
+            FFAppState().n9Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[8].available''',
+            );
+            safeSetState(() {});
+            FFAppState().c1available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[9].available''',
+            );
+            FFAppState().c2available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[10].available''',
+            );
+            FFAppState().c3available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[11].available''',
+            );
+            FFAppState().c4available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[12].available''',
+            );
+            FFAppState().c5available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[13].available''',
+            );
+            FFAppState().c6available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[14].available''',
+            );
+            FFAppState().c7available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[15].available''',
+            );
+            FFAppState().c8available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[16].available''',
+            );
+            FFAppState().c9available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[17].available''',
+            );
+            safeSetState(() {});
+            FFAppState().b1available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[18].available''',
+            );
+            FFAppState().b2available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[19].available''',
+            );
+            FFAppState().b3available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[20].available''',
+            );
+            FFAppState().b4available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[21].available''',
+            );
+            FFAppState().b5available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[22].available''',
+            );
+            FFAppState().b6available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[23].available''',
+            );
+            FFAppState().b7available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[24].available''',
+            );
+            FFAppState().b8available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[25].available''',
+            );
+            FFAppState().b9available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[26].available''',
+            );
+            safeSetState(() {});
+          }
+          if (FFAppState().n1Available &&
+              FFAppState().n2Available &&
+              FFAppState().n3Available &&
+              FFAppState().n4Available &&
+              FFAppState().n5Available &&
+              FFAppState().n6Available &&
+              FFAppState().n7Available &&
+              FFAppState().n8Available &&
+              FFAppState().n9Available &&
+              FFAppState().c1available &&
+              FFAppState().c2available &&
+              FFAppState().c3available &&
+              FFAppState().c4available &&
+              FFAppState().c5available &&
+              FFAppState().c6available &&
+              FFAppState().c7available &&
+              FFAppState().c8available &&
+              FFAppState().c9available &&
+              FFAppState().b1available &&
+              FFAppState().b2available &&
+              FFAppState().b3available &&
+              FFAppState().b4available &&
+              FFAppState().b5available &&
+              FFAppState().b6available &&
+              FFAppState().b7available &&
+              FFAppState().b8available &&
+              FFAppState().b9available) {
+            FFAppState().booked = false;
+            FFAppState().update(() {});
+          }
+        }),
+        Future(() async {
+          _model.apiResultlcs =
+              await UserManagementAPIGroup.getUserByIdCall.call(
+            id: FFAppState().uid,
+          );
+
+          if ((_model.apiResultlcs?.succeeded ?? true)) {
+            await currentUserReference!.update(createUserDetailsRecordData(
+              email: getJsonField(
+                (_model.apiResultlcs?.jsonBody ?? ''),
+                r'''$.email''',
+              ).toString().toString(),
+              uid: getJsonField(
+                (_model.apiResultlcs?.jsonBody ?? ''),
+                r'''$.id''',
+              ).toString().toString(),
+              firstName: getJsonField(
+                (_model.apiResultlcs?.jsonBody ?? ''),
+                r'''$.firstName''',
+              ).toString().toString(),
+              lastName: getJsonField(
+                (_model.apiResultlcs?.jsonBody ?? ''),
+                r'''$.lastName''',
+              ).toString().toString(),
+              phoneNumber: getJsonField(
+                (_model.apiResultlcs?.jsonBody ?? ''),
+                r'''$.phoneNumber''',
+              ).toString().toString(),
+            ));
+          }
+        }),
+      ]);
     });
   }
 

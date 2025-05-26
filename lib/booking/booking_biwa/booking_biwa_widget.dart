@@ -1,10 +1,8 @@
-import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'booking_biwa_model.dart';
@@ -29,79 +27,6 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => BookingBiwaModel());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await Future.wait([
-        Future(() async {
-          _model.apiResultzg1 =
-              await SpotsManagementAPIGroup.getAllParkingSpotsCall.call();
-
-          if ((_model.apiResultzg1?.succeeded ?? true)) {
-            FFAppState().b1available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[18].available''',
-            );
-            FFAppState().b2available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[19].available''',
-            );
-            FFAppState().b3available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[20].available''',
-            );
-            FFAppState().b4available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[21].available''',
-            );
-            FFAppState().b5available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[22].available''',
-            );
-            FFAppState().b6available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[23].available''',
-            );
-            FFAppState().b7available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[24].available''',
-            );
-            FFAppState().b8available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[25].available''',
-            );
-            FFAppState().b9available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[26].available''',
-            );
-            safeSetState(() {});
-          }
-        }),
-        Future(() async {
-          if (dateTimeFormat(
-                "d/M/y",
-                getCurrentTimestamp,
-                locale: FFLocalizations.of(context).languageCode,
-              ) !=
-              dateTimeFormat(
-                "d/M/y",
-                FFAppState().ParkingDate,
-                locale: FFLocalizations.of(context).languageCode,
-              )) {
-            FFAppState().b1available = true;
-            FFAppState().b2available = true;
-            FFAppState().b3available = true;
-            FFAppState().b4available = true;
-            FFAppState().b5available = true;
-            FFAppState().b6available = true;
-            FFAppState().b7available = true;
-            FFAppState().b8available = true;
-            FFAppState().b9available = true;
-            FFAppState().update(() {});
-          }
-        }),
-      ]);
-    });
   }
 
   @override
@@ -347,20 +272,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().b1available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -492,20 +404,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().b2available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -637,20 +536,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().b3available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -782,20 +668,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().b4available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -927,20 +800,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().b5available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -1072,20 +932,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().b6available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -1217,20 +1064,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().b7available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -1362,20 +1196,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().b8available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -1507,20 +1328,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().b9available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -1799,16 +1607,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                   ),
                 ),
               ),
-              if ((dateTimeFormat(
-                        "d/M/y",
-                        FFAppState().ParkingDate,
-                        locale: FFLocalizations.of(context).languageCode,
-                      ) ==
-                      dateTimeFormat(
-                        "d/M/y",
-                        getCurrentTimestamp,
-                        locale: FFLocalizations.of(context).languageCode,
-                      )) &&
+              if (FFAppState().booked &&
                   responsiveVisibility(
                     context: context,
                     tabletLandscape: false,
@@ -1830,7 +1629,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                   .bodyMedium
                                   .fontStyle,
                             ),
-                            color: Color(0xFFFF0600),
+                            color: Color(0xFFD81112),
                             fontSize: 15.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -1863,7 +1662,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                   .bodyMedium
                                   .fontStyle,
                             ),
-                            color: Color(0xFFFF0600),
+                            color: Color(0xFFD81112),
                             fontSize: 15.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
@@ -1882,19 +1681,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      if ((FFAppState().selected == 1) &&
-                          (dateTimeFormat(
-                                "d/M/y",
-                                FFAppState().ParkingDate,
-                                locale:
-                                    FFLocalizations.of(context).languageCode,
-                              ) !=
-                              dateTimeFormat(
-                                "d/M/y",
-                                getCurrentTimestamp,
-                                locale:
-                                    FFLocalizations.of(context).languageCode,
-                              )))
+                      if ((FFAppState().selected == 1) && !FFAppState().booked)
                         Text(
                           FFLocalizations.of(context).getText(
                             'dkye89kw' /* selected spot */,
@@ -2135,17 +1922,7 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                     ),
                 ],
               ),
-              if ((FFAppState().selected == 1) &&
-                  (dateTimeFormat(
-                        "d/M/y",
-                        FFAppState().ParkingDate,
-                        locale: FFLocalizations.of(context).languageCode,
-                      ) !=
-                      dateTimeFormat(
-                        "d/M/y",
-                        getCurrentTimestamp,
-                        locale: FFLocalizations.of(context).languageCode,
-                      )))
+              if ((FFAppState().selected == 1) && !FFAppState().booked)
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(

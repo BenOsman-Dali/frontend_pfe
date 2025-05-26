@@ -1,10 +1,8 @@
-import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'booking_neuchatel_model.dart';
@@ -29,81 +27,6 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => BookingNeuchatelModel());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await Future.wait([
-        Future(() async {
-          _model.apiResultzg1 =
-              await SpotsManagementAPIGroup.getAllParkingSpotsCall.call();
-
-          if ((_model.apiResultzg1?.succeeded ?? true)) {
-            FFAppState().n1Available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[0].available''',
-            );
-            FFAppState().n2Available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[1].available''',
-            );
-            FFAppState().n3Available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[2].available''',
-            );
-            FFAppState().n4Available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[3].available''',
-            );
-            FFAppState().n5Available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[4].available''',
-            );
-            FFAppState().n6Available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[5].available''',
-            );
-            FFAppState().n7Available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[6].available''',
-            );
-            FFAppState().n8Available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[7].available''',
-            );
-            FFAppState().n9Available = getJsonField(
-              (_model.apiResultzg1?.jsonBody ?? ''),
-              r'''$[8].available''',
-            );
-            safeSetState(() {});
-          }
-        }),
-        Future(() async {
-          if (dateTimeFormat(
-                "d/M/y",
-                getCurrentTimestamp,
-                locale: FFLocalizations.of(context).languageCode,
-              ) !=
-              dateTimeFormat(
-                "d/M/y",
-                FFAppState().ParkingDate,
-                locale: FFLocalizations.of(context).languageCode,
-              )) {
-            FFAppState().n1Available = true;
-            FFAppState().n6Available = true;
-            FFAppState().n2Available = true;
-            FFAppState().n3Available = true;
-            FFAppState().n4Available = true;
-            FFAppState().n7Available = true;
-            FFAppState().n9Available = true;
-            FFAppState().n8Available = true;
-            FFAppState().ParkingDate =
-                DateTime.fromMillisecondsSinceEpoch(1744379280000);
-            FFAppState().n5Available = true;
-            FFAppState().update(() {});
-          }
-        }),
-      ]);
-    });
   }
 
   @override
@@ -349,20 +272,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().n1Available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -494,20 +404,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().n2Available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -639,20 +536,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().n3Available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -784,20 +668,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().n4Available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -929,20 +800,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().n5Available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -1076,23 +934,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                           Stack(
                                             children: [
                                               if (FFAppState().n6Available &&
-                                                  (dateTimeFormat(
-                                                        "d/M/y",
-                                                        FFAppState()
-                                                            .ParkingDate,
-                                                        locale:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .languageCode,
-                                                      ) !=
-                                                      dateTimeFormat(
-                                                        "d/M/y",
-                                                        getCurrentTimestamp,
-                                                        locale:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .languageCode,
-                                                      )))
+                                                  !FFAppState().booked)
                                                 Align(
                                                   alignment:
                                                       AlignmentDirectional(
@@ -1236,20 +1078,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().n7Available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -1381,20 +1210,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().n8Available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -1526,20 +1342,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                       child: Stack(
                                         children: [
                                           if (FFAppState().n9Available &&
-                                              (dateTimeFormat(
-                                                    "d/M/y",
-                                                    FFAppState().ParkingDate,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ) !=
-                                                  dateTimeFormat(
-                                                    "d/M/y",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  )))
+                                              !FFAppState().booked)
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -0.03, 0.01),
@@ -1818,16 +1621,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                   ),
                 ),
               ),
-              if ((dateTimeFormat(
-                        "d/M/y",
-                        FFAppState().ParkingDate,
-                        locale: FFLocalizations.of(context).languageCode,
-                      ) ==
-                      dateTimeFormat(
-                        "d/M/y",
-                        getCurrentTimestamp,
-                        locale: FFLocalizations.of(context).languageCode,
-                      )) &&
+              if (FFAppState().booked &&
                   responsiveVisibility(
                     context: context,
                     tabletLandscape: false,
@@ -1901,7 +1695,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      if (FFAppState().selected == 1)
+                      if ((FFAppState().selected == 1) && !FFAppState().booked)
                         Text(
                           FFLocalizations.of(context).getText(
                             '975zxlwt' /* selected spot */,
@@ -2142,17 +1936,7 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                     ),
                 ],
               ),
-              if ((FFAppState().selected == 1) &&
-                  (dateTimeFormat(
-                        "d/M/y",
-                        FFAppState().ParkingDate,
-                        locale: FFLocalizations.of(context).languageCode,
-                      ) !=
-                      dateTimeFormat(
-                        "d/M/y",
-                        getCurrentTimestamp,
-                        locale: FFLocalizations.of(context).languageCode,
-                      )))
+              if ((FFAppState().selected == 1) && !FFAppState().booked)
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(

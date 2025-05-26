@@ -14,11 +14,19 @@
       },
       "oauth_client": [
         {
-          "client_id": "708550190345-uor2dsn52flja6o5esahmh6kv72mooe8.apps.googleusercontent.com",
+          "client_id": "708550190345-tcelvob0sjl53r2aaav977mu62iuf6ou.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.mycompany.onspot",
             "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "708550190345-uljrn9fcgqmahht6lg3loedjc688bubo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.onspot",
+            "certificate_hash": "1168c3e7acc78a14800dbff99d896a402c6a0718"
           }
         },
         {

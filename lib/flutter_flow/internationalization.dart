@@ -851,13 +851,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'it': '',
     },
-    '1004im04': {
-      'en': 'You will receive  your e-tickets at the address',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
     's9enbihc': {
       'en': 'I agree to the ',
       'ar': '',
@@ -1893,7 +1886,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'xxe7z8rx': {
       'en':
-          'We\'ve sent a confirmation email with your parking spot QR code to:',
+          'We\'ve sent a confirmation email with your parking spot credentials to:',
       'ar': '',
       'es': '',
       'fr': '',
@@ -2466,7 +2459,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
     '76t0p7sb': {
-      'en': 'You can\'t select more than 1 spot !',
+      'en': 'You can\'t select more than 1 spot for a single day !',
       'ar': '',
       'es': '',
       'fr': '',

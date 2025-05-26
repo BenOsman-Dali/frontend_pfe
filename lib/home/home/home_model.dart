@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 class HomeModel extends FlutterFlowModel<HomeWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Backend Call - API (getAllParkingSpots)] action in home widget.
+  ApiCallResponse? apiResultzg1;
   // Stores action output result for [Backend Call - API (getUserById )] action in home widget.
   ApiCallResponse? apiResultlcs;
 
