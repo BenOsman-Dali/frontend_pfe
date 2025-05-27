@@ -13,8 +13,6 @@ export '/authentification/signin/signin_widget.dart' show SigninWidget;
 export '/authentification/signup/signup_widget.dart' show SignupWidget;
 export '/profile/change_password/change_password_widget.dart'
     show ChangePasswordWidget;
-export '/profile/notifications/notifications_widget.dart'
-    show NotificationsWidget;
 export '/profile/terms/terms_widget.dart' show TermsWidget;
 export '/reminders/reminders/reminders_widget.dart' show RemindersWidget;
 export '/reminders/added_reminder/added_reminder_widget.dart'

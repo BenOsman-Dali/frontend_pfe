@@ -12,7 +12,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class SpotsManagementAPIGroup {
   static String getBaseUrl() =>
-      'https://1558-2c0f-f698-41c7-4017-ac7e-d406-41e2-feec.ngrok-free.app';
+      'https://2ed7-2c0f-f698-4144-408e-6911-49c0-d7c3-32ba.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -219,7 +219,7 @@ class ResetAllSpotsCall {
 
 class UserManagementAPIGroup {
   static String getBaseUrl() =>
-      'https://1558-2c0f-f698-41c7-4017-ac7e-d406-41e2-feec.ngrok-free.app';
+      'https://2ed7-2c0f-f698-4144-408e-6911-49c0-d7c3-32ba.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -277,6 +277,10 @@ class GetUserByIdCall {
         response,
         r'''$.phoneNumber''',
       ));
+  dynamic bookedSpot(dynamic response) => getJsonField(
+        response,
+        r'''$.parkingSpot''',
+      );
 }
 
 class UpdateUserCall {
@@ -286,7 +290,10 @@ class UpdateUserCall {
     String? lastName = '',
     String? email = '',
     String? phoneNumber = '',
+    bool? bookedToday,
+    String? bookedSpotID,
   }) async {
+    bookedSpotID ??= null;
     final baseUrl = UserManagementAPIGroup.getBaseUrl();
 
     final ffApiRequestBody = '''
@@ -295,7 +302,9 @@ class UpdateUserCall {
   "firstName": "${escapeStringForJson(firstName)}",
   "lastName": "${escapeStringForJson(lastName)}",
   "email": "${escapeStringForJson(email)}",
-  "phoneNumber": "${escapeStringForJson(phoneNumber)}"
+  "phoneNumber": "${escapeStringForJson(phoneNumber)}",
+  "bookedToday": "${bookedToday}",
+  "parkingSpot": "${escapeStringForJson(bookedSpotID)}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'updateUser ',
@@ -317,6 +326,11 @@ class UpdateUserCall {
       alwaysAllowBody: false,
     );
   }
+
+  bool? today(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$.bookedToday''',
+      ));
 }
 
 class DeleteUserCall {
@@ -376,7 +390,10 @@ class CreateUserCall {
     String? email = '',
     String? phoneNumber = '',
     String? id = '',
+    bool? bookedToday,
+    String? parkingSpot,
   }) async {
+    parkingSpot ??= null;
     final baseUrl = UserManagementAPIGroup.getBaseUrl();
 
     final ffApiRequestBody = '''
@@ -385,7 +402,9 @@ class CreateUserCall {
   "firstName": "${escapeStringForJson(firstName)}",
   "lastName": "${escapeStringForJson(lastName)}",
   "email": "${escapeStringForJson(email)}",
-  "phoneNumber": "${escapeStringForJson(phoneNumber)}"
+  "phoneNumber": "${escapeStringForJson(phoneNumber)}",
+  "bookedToday": ${bookedToday},
+  "parkingSpot": "${escapeStringForJson(parkingSpot)}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'createUser',

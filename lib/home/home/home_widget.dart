@@ -153,41 +153,11 @@ class _HomeWidgetState extends State<HomeWidget> {
             );
             safeSetState(() {});
           }
-          if (FFAppState().n1Available &&
-              FFAppState().n2Available &&
-              FFAppState().n3Available &&
-              FFAppState().n4Available &&
-              FFAppState().n5Available &&
-              FFAppState().n6Available &&
-              FFAppState().n7Available &&
-              FFAppState().n8Available &&
-              FFAppState().n9Available &&
-              FFAppState().c1available &&
-              FFAppState().c2available &&
-              FFAppState().c3available &&
-              FFAppState().c4available &&
-              FFAppState().c5available &&
-              FFAppState().c6available &&
-              FFAppState().c7available &&
-              FFAppState().c8available &&
-              FFAppState().c9available &&
-              FFAppState().b1available &&
-              FFAppState().b2available &&
-              FFAppState().b3available &&
-              FFAppState().b4available &&
-              FFAppState().b5available &&
-              FFAppState().b6available &&
-              FFAppState().b7available &&
-              FFAppState().b8available &&
-              FFAppState().b9available) {
-            FFAppState().booked = false;
-            FFAppState().update(() {});
-          }
         }),
         Future(() async {
           _model.apiResultlcs =
               await UserManagementAPIGroup.getUserByIdCall.call(
-            id: FFAppState().uid,
+            id: currentUserUid,
           );
 
           if ((_model.apiResultlcs?.succeeded ?? true)) {
@@ -213,6 +183,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                 r'''$.phoneNumber''',
               ).toString().toString(),
             ));
+            FFAppState().booked = getJsonField(
+              (_model.apiResultlcs?.jsonBody ?? ''),
+              r'''$.bookedToday''',
+            );
+            safeSetState(() {});
           }
         }),
       ]);

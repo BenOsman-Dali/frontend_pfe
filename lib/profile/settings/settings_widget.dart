@@ -1,7 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -257,70 +257,6 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 5.0),
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      context.pushNamed(
-                        NotificationsWidget.routeName,
-                        extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
-                            hasTransition: true,
-                            transitionType: PageTransitionType.bottomToTop,
-                          ),
-                        },
-                      );
-                    },
-                    child: Container(
-                      width: 406.3,
-                      height: 53.4,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20.0),
-                          bottomRight: Radius.circular(20.0),
-                          topLeft: Radius.circular(20.0),
-                          topRight: Radius.circular(20.0),
-                        ),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          width: 0.5,
-                        ),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(12.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'jscb33zs' /* Notifications */,
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.roboto(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 20.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                   child: Container(
                     width: 390.0,
                     height: 53.4,
@@ -521,14 +457,68 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 5.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 25.0, 5.0, 5.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      await actions.inAppReview();
+                      var confirmDialogResponse = await showDialog<bool>(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                content: Text(
+                                    'Are you sure that want to cancel your reservation ?'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () => Navigator.pop(
+                                        alertDialogContext, false),
+                                    child: Text('Cancel'),
+                                  ),
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext, true),
+                                    child: Text('Yes'),
+                                  ),
+                                ],
+                              );
+                            },
+                          ) ??
+                          false;
+                      if (confirmDialogResponse) {
+                        _model.salah =
+                            await UserManagementAPIGroup.getUserByIdCall.call(
+                          id: currentUserUid,
+                        );
+
+                        if ((_model.salah?.succeeded ?? true)) {
+                          _model.apiResult3sd = await SpotsManagementAPIGroup
+                              .updateParkingSpotCall
+                              .call(
+                            id: getJsonField(
+                              (_model.salah?.jsonBody ?? ''),
+                              r'''$.parkingSpot''',
+                            ),
+                            available: true,
+                          );
+                        }
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Reservation cancelled ',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                      }
+
+                      safeSetState(() {});
                     },
                     child: Container(
                       width: 390.0,
@@ -550,7 +540,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         padding: EdgeInsets.all(12.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            'tgae2odg' /* Rate the app  */,
+                            'h7l2p1ml' /* Cancel reservation */,
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -562,6 +552,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           .bodyMedium
                                           .fontStyle,
                                     ),
+                                    color: Color(0xFFEF0505),
                                     fontSize: 20.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
@@ -584,12 +575,39 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      GoRouter.of(context).prepareAuthEvent();
-                      await authManager.signOut();
-                      GoRouter.of(context).clearRedirectLocation();
+                      Function() _navigate = () {};
+                      var confirmDialogResponse = await showDialog<bool>(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                content: Text(
+                                    'Are you sure that you want to log out ?'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () => Navigator.pop(
+                                        alertDialogContext, false),
+                                    child: Text('Cancel'),
+                                  ),
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext, true),
+                                    child: Text('Yes'),
+                                  ),
+                                ],
+                              );
+                            },
+                          ) ??
+                          false;
+                      if (confirmDialogResponse) {
+                        GoRouter.of(context).prepareAuthEvent();
+                        await authManager.signOut();
+                        GoRouter.of(context).clearRedirectLocation();
 
-                      context.goNamedAuth(
-                          SigninWidget.routeName, context.mounted);
+                        _navigate = () => context.goNamedAuth(
+                            SigninWidget.routeName, context.mounted);
+                      }
+
+                      _navigate();
                     },
                     child: Container(
                       width: 390.0,

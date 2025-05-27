@@ -11,6 +11,8 @@ class CheckoutModel extends FlutterFlowModel<CheckoutWidget> {
   bool? checkboxValue;
   // Stores action output result for [Backend Call - API (updateParkingSpot)] action in Button widget.
   ApiCallResponse? apiResult32t;
+  // Stores action output result for [Backend Call - API (updateUser )] action in Button widget.
+  ApiCallResponse? apiResultoti;
   // Stores action output result for [Backend Call - API (updateParkingSpot)] action in Button widget.
   ApiCallResponse? apiResultua5;
   // Stores action output result for [Backend Call - API (updateParkingSpot)] action in Button widget.

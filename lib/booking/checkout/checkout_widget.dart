@@ -8,7 +8,6 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'checkout_model.dart';
 export 'checkout_model.dart';
 
@@ -334,6 +333,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 1,
                             available: FFAppState().n1Available,
                           );
+
+                          _model.apiResultoti =
+                              await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: '1',
+                          );
                         }
                       }),
                       Future(() async {
@@ -632,18 +637,6 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                         }
                       }),
                     ]);
-                    await launchUrl(Uri(
-                        scheme: 'mailto',
-                        path: currentUserEmail,
-                        query: {
-                          'subject': 'Your Parking Spot Booking Confirmation',
-                          'body':
-                              'Hi ${valueOrDefault(currentUserDocument?.firstName, '')}!Thank you for booking your parking spot! Your reservation has been confirmed with the following details:',
-                        }
-                            .entries
-                            .map((MapEntry<String, String> e) =>
-                                '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-                            .join('&')));
 
                     context.pushNamed(ConfirmationWidget.routeName);
 
