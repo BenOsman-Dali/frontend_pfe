@@ -34,16 +34,20 @@ class _ConfirmationWidgetState extends State<ConfirmationWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      FFAppState().booked = !(FFAppState().booked ?? true);
-      safeSetState(() {});
-      _model.apiResult6cj = await UserManagementAPIGroup.updateUserCall.call(
+      _model.apiResultmgn = await UserManagementAPIGroup.getUserByIdCall.call(
         id: currentUserUid,
-        bookedToday: FFAppState().booked,
-        firstName: valueOrDefault(currentUserDocument?.firstName, ''),
-        lastName: valueOrDefault(currentUserDocument?.lastName, ''),
-        email: currentUserEmail,
-        phoneNumber: currentPhoneNumber,
       );
+
+      if ((_model.apiResultmgn?.succeeded ?? true)) {
+        _model.apiResultbla = await UserManagementAPIGroup.updateUserCall.call(
+          id: currentUserUid,
+          firstName: valueOrDefault(currentUserDocument?.firstName, ''),
+          lastName: valueOrDefault(currentUserDocument?.lastName, ''),
+          email: currentUserEmail,
+          phoneNumber: currentPhoneNumber,
+          bookedToday: true,
+        );
+      }
     });
   }
 

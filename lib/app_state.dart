@@ -102,9 +102,6 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _b9available = prefs.getBool('ff_b9available') ?? _b9available;
     });
-    _safeInit(() {
-      _uid = prefs.getString('ff_uid') ?? _uid;
-    });
   }
 
   void update(VoidCallback callback) {
@@ -508,13 +505,6 @@ class FFAppState extends ChangeNotifier {
   bool get isSubmitting => _isSubmitting;
   set isSubmitting(bool value) {
     _isSubmitting = value;
-  }
-
-  String _uid = '';
-  String get uid => _uid;
-  set uid(String value) {
-    _uid = value;
-    prefs.setString('ff_uid', value);
   }
 
   bool _changesSaved = false;

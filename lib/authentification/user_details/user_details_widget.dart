@@ -497,20 +497,13 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                                   firstName:
                                       _model.firstNameTextController.text,
                                   lastName: _model.lastNameTextController.text,
-                                  phoneNumber:
-                                      _model.phoneNumberTextController.text,
                                   vehicleBrand:
                                       _model.vehicleTextController.text,
-                                  uid: valueOrDefault<String>(
-                                    random_data.randomString(
-                                      4,
-                                      7,
-                                      false,
-                                      false,
-                                      true,
-                                    ),
-                                    'f22Cf',
-                                  ),
+                                  uid: random_data
+                                      .randomInteger(1, 10000)
+                                      .toString(),
+                                  phoneNumber:
+                                      _model.phoneNumberTextController.text,
                                 ));
 
                                 context.pushNamed(

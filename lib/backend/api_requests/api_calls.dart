@@ -12,7 +12,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class SpotsManagementAPIGroup {
   static String getBaseUrl() =>
-      'https://2ed7-2c0f-f698-4144-408e-6911-49c0-d7c3-32ba.ngrok-free.app';
+      'https://e30c-2c0f-f698-4144-408e-509e-d4c1-c9d1-a473.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -219,7 +219,7 @@ class ResetAllSpotsCall {
 
 class UserManagementAPIGroup {
   static String getBaseUrl() =>
-      'https://2ed7-2c0f-f698-4144-408e-6911-49c0-d7c3-32ba.ngrok-free.app';
+      'https://e30c-2c0f-f698-4144-408e-509e-d4c1-c9d1-a473.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -229,7 +229,8 @@ class UserManagementAPIGroup {
   static UpdateUserCall updateUserCall = UpdateUserCall();
   static DeleteUserCall deleteUserCall = DeleteUserCall();
   static GetAllUsersCall getAllUsersCall = GetAllUsersCall();
-  static CreateUserCall createUserCall = CreateUserCall();
+  static ResetUsersCall resetUsersCall = ResetUsersCall();
+  static AddUserrCall addUserrCall = AddUserrCall();
 }
 
 class GetUserByIdCall {
@@ -335,7 +336,7 @@ class UpdateUserCall {
 
 class DeleteUserCall {
   Future<ApiCallResponse> call({
-    int? id,
+    String? id = '',
   }) async {
     final baseUrl = UserManagementAPIGroup.getBaseUrl();
 
@@ -383,17 +384,41 @@ class GetAllUsersCall {
   }
 }
 
-class CreateUserCall {
+class ResetUsersCall {
+  Future<ApiCallResponse> call() async {
+    final baseUrl = UserManagementAPIGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'resetUsers',
+      apiUrl: '${baseUrl}/api/users/reset',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'ngrok-skip-browser-warning': 'true',
+      },
+      params: {},
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class AddUserrCall {
   Future<ApiCallResponse> call({
     String? firstName = '',
     String? lastName = '',
     String? email = '',
     String? phoneNumber = '',
-    String? id = '',
     bool? bookedToday,
-    String? parkingSpot,
+    String? bookedSpotId = '',
+    String? id = '',
   }) async {
-    parkingSpot ??= null;
     final baseUrl = UserManagementAPIGroup.getBaseUrl();
 
     final ffApiRequestBody = '''
@@ -402,12 +427,10 @@ class CreateUserCall {
   "firstName": "${escapeStringForJson(firstName)}",
   "lastName": "${escapeStringForJson(lastName)}",
   "email": "${escapeStringForJson(email)}",
-  "phoneNumber": "${escapeStringForJson(phoneNumber)}",
-  "bookedToday": ${bookedToday},
-  "parkingSpot": "${escapeStringForJson(parkingSpot)}"
+  "phoneNumber": "${escapeStringForJson(phoneNumber)}"
 }''';
     return ApiManager.instance.makeApiCall(
-      callName: 'createUser',
+      callName: 'AddUserr',
       apiUrl: '${baseUrl}/api/users',
       callType: ApiCallType.POST,
       headers: {
@@ -419,8 +442,8 @@ class CreateUserCall {
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
-      encodeBodyUtf8: true,
-      decodeUtf8: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
       cache: false,
       isStreamingApi: false,
       alwaysAllowBody: false,

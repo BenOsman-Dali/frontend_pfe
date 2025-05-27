@@ -55,15 +55,15 @@ class UserDetailsRecord extends FirestoreRecord {
   String get vehicleBrand => _vehicleBrand ?? '';
   bool hasVehicleBrand() => _vehicleBrand != null;
 
-  // "phone_number" field.
-  String? _phoneNumber;
-  String get phoneNumber => _phoneNumber ?? '';
-  bool hasPhoneNumber() => _phoneNumber != null;
-
   // "password" field.
   String? _password;
   String get password => _password ?? '';
   bool hasPassword() => _password != null;
+
+  // "phone_number" field.
+  String? _phoneNumber;
+  String get phoneNumber => _phoneNumber ?? '';
+  bool hasPhoneNumber() => _phoneNumber != null;
 
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
@@ -74,8 +74,8 @@ class UserDetailsRecord extends FirestoreRecord {
     _photoUrl = snapshotData['photo_url'] as String?;
     _displayName = snapshotData['display_name'] as String?;
     _vehicleBrand = snapshotData['vehicle_brand'] as String?;
-    _phoneNumber = snapshotData['phone_number'] as String?;
     _password = snapshotData['password'] as String?;
+    _phoneNumber = snapshotData['phone_number'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -121,8 +121,8 @@ Map<String, dynamic> createUserDetailsRecordData({
   String? photoUrl,
   String? displayName,
   String? vehicleBrand,
-  String? phoneNumber,
   String? password,
+  String? phoneNumber,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -134,8 +134,8 @@ Map<String, dynamic> createUserDetailsRecordData({
       'photo_url': photoUrl,
       'display_name': displayName,
       'vehicle_brand': vehicleBrand,
-      'phone_number': phoneNumber,
       'password': password,
+      'phone_number': phoneNumber,
     }.withoutNulls,
   );
 
@@ -155,8 +155,8 @@ class UserDetailsRecordDocumentEquality implements Equality<UserDetailsRecord> {
         e1?.photoUrl == e2?.photoUrl &&
         e1?.displayName == e2?.displayName &&
         e1?.vehicleBrand == e2?.vehicleBrand &&
-        e1?.phoneNumber == e2?.phoneNumber &&
-        e1?.password == e2?.password;
+        e1?.password == e2?.password &&
+        e1?.phoneNumber == e2?.phoneNumber;
   }
 
   @override
@@ -169,8 +169,8 @@ class UserDetailsRecordDocumentEquality implements Equality<UserDetailsRecord> {
         e?.photoUrl,
         e?.displayName,
         e?.vehicleBrand,
-        e?.phoneNumber,
-        e?.password
+        e?.password,
+        e?.phoneNumber
       ]);
 
   @override

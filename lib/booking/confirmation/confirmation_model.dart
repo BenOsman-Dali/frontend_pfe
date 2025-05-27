@@ -7,8 +7,10 @@ import 'package:flutter/material.dart';
 class ConfirmationModel extends FlutterFlowModel<ConfirmationWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Backend Call - API (getUserById )] action in confirmation widget.
+  ApiCallResponse? apiResultmgn;
   // Stores action output result for [Backend Call - API (updateUser )] action in confirmation widget.
-  ApiCallResponse? apiResult6cj;
+  ApiCallResponse? apiResultbla;
 
   @override
   void initState(BuildContext context) {}

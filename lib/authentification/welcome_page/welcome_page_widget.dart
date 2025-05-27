@@ -7,7 +7,6 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'welcome_page_model.dart';
 export 'welcome_page_model.dart';
 
@@ -33,16 +32,13 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await UserManagementAPIGroup.createUserCall.call(
+      _model.apiResultm0e = await UserManagementAPIGroup.addUserrCall.call(
         firstName: valueOrDefault(currentUserDocument?.firstName, ''),
         lastName: valueOrDefault(currentUserDocument?.lastName, ''),
         email: currentUserEmail,
         phoneNumber: currentPhoneNumber,
         id: currentUserUid,
       );
-
-      FFAppState().uid = currentUserUid;
-      safeSetState(() {});
     });
   }
 
@@ -55,8 +51,6 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -228,7 +222,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                         ),
                         AuthUserStreamWidget(
                           builder: (context) => Text(
-                            valueOrDefault(currentUserDocument?.firstName, ''),
+                            '${valueOrDefault(currentUserDocument?.firstName, '')} !',
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
