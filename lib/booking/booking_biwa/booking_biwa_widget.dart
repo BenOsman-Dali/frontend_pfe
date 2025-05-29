@@ -324,10 +324,14 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -456,10 +460,14 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -588,10 +596,14 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -720,10 +732,14 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -852,10 +868,14 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -984,10 +1004,14 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -1116,10 +1140,14 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -1248,10 +1276,14 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -1380,10 +1412,14 @@ class _BookingBiwaWidgetState extends State<BookingBiwaWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)

@@ -102,6 +102,12 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _b9available = prefs.getBool('ff_b9available') ?? _b9available;
     });
+    _safeInit(() {
+      _bookedSpots = prefs.getInt('ff_bookedSpots') ?? _bookedSpots;
+    });
+    _safeInit(() {
+      _AvSpots = prefs.getInt('ff_AvSpots') ?? _AvSpots;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -517,6 +523,20 @@ class FFAppState extends ChangeNotifier {
   bool get booked => _booked;
   set booked(bool value) {
     _booked = value;
+  }
+
+  int _bookedSpots = 0;
+  int get bookedSpots => _bookedSpots;
+  set bookedSpots(int value) {
+    _bookedSpots = value;
+    prefs.setInt('ff_bookedSpots', value);
+  }
+
+  int _AvSpots = 0;
+  int get AvSpots => _AvSpots;
+  set AvSpots(int value) {
+    _AvSpots = value;
+    prefs.setInt('ff_AvSpots', value);
   }
 }
 

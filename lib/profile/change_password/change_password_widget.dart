@@ -71,6 +71,8 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
               size: 22.0,
             ),
             onPressed: () async {
+              FFAppState().changesSaved = false;
+              safeSetState(() {});
               context.safePop();
             },
           ),

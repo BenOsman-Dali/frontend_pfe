@@ -12,7 +12,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class SpotsManagementAPIGroup {
   static String getBaseUrl() =>
-      'https://e30c-2c0f-f698-4144-408e-509e-d4c1-c9d1-a473.ngrok-free.app';
+      'https://f0cb-2c0f-f698-4144-408e-1d20-fa20-9a24-1504.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -26,6 +26,9 @@ class SpotsManagementAPIGroup {
       GetAllParkingSpotsCall();
   static CreateParkingSpotCall createParkingSpotCall = CreateParkingSpotCall();
   static ResetAllSpotsCall resetAllSpotsCall = ResetAllSpotsCall();
+  static GetPercentageCall getPercentageCall = GetPercentageCall();
+  static NonBookedPercentageCall nonBookedPercentageCall =
+      NonBookedPercentageCall();
 }
 
 class GetParkingSpotByIdCall {
@@ -150,6 +153,15 @@ class GetAllParkingSpotsCall {
           .map((x) => castToType<bool>(x))
           .withoutNulls
           .toList();
+  List<int>? spotid(dynamic response) => (getJsonField(
+        response,
+        r'''$[0].spot_id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
 }
 
 class CreateParkingSpotCall {
@@ -213,13 +225,71 @@ class ResetAllSpotsCall {
   }
 }
 
+class GetPercentageCall {
+  Future<ApiCallResponse> call() async {
+    final baseUrl = SpotsManagementAPIGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'getPercentage',
+      apiUrl: '${baseUrl}/api/spots/booked-percentage',
+      callType: ApiCallType.GET,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'ngrok-skip-browser-warning': 'true',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  dynamic percentage(dynamic response) => getJsonField(
+        response,
+        r'''$''',
+      );
+}
+
+class NonBookedPercentageCall {
+  Future<ApiCallResponse> call() async {
+    final baseUrl = SpotsManagementAPIGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'nonBookedPercentage',
+      apiUrl: '${baseUrl}/api/spots/non-booked-percentage',
+      callType: ApiCallType.GET,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'ngrok-skip-browser-warning': 'true',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  dynamic nonBooked(dynamic response) => getJsonField(
+        response,
+        r'''$''',
+      );
+}
+
 /// End SpotsManagementAPI Group Code
 
 /// Start UserManagementAPI Group Code
 
 class UserManagementAPIGroup {
   static String getBaseUrl() =>
-      'https://e30c-2c0f-f698-4144-408e-509e-d4c1-c9d1-a473.ngrok-free.app';
+      'https://f0cb-2c0f-f698-4144-408e-1d20-fa20-9a24-1504.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -229,7 +299,6 @@ class UserManagementAPIGroup {
   static UpdateUserCall updateUserCall = UpdateUserCall();
   static DeleteUserCall deleteUserCall = DeleteUserCall();
   static GetAllUsersCall getAllUsersCall = GetAllUsersCall();
-  static ResetUsersCall resetUsersCall = ResetUsersCall();
   static AddUserrCall addUserrCall = AddUserrCall();
 }
 
@@ -240,7 +309,7 @@ class GetUserByIdCall {
     final baseUrl = UserManagementAPIGroup.getBaseUrl();
 
     return ApiManager.instance.makeApiCall(
-      callName: 'getUserById ',
+      callName: 'getUserById',
       apiUrl: '${baseUrl}/api/users/${id}',
       callType: ApiCallType.GET,
       headers: {
@@ -278,10 +347,10 @@ class GetUserByIdCall {
         response,
         r'''$.phoneNumber''',
       ));
-  dynamic bookedSpot(dynamic response) => getJsonField(
+  String? bookedSpotID(dynamic response) => castToType<String>(getJsonField(
         response,
-        r'''$.parkingSpot''',
-      );
+        r'''$.bookedSpotId''',
+      ));
 }
 
 class UpdateUserCall {
@@ -291,10 +360,8 @@ class UpdateUserCall {
     String? lastName = '',
     String? email = '',
     String? phoneNumber = '',
-    bool? bookedToday,
-    String? bookedSpotID,
+    int? bookedSpotID,
   }) async {
-    bookedSpotID ??= null;
     final baseUrl = UserManagementAPIGroup.getBaseUrl();
 
     final ffApiRequestBody = '''
@@ -304,11 +371,10 @@ class UpdateUserCall {
   "lastName": "${escapeStringForJson(lastName)}",
   "email": "${escapeStringForJson(email)}",
   "phoneNumber": "${escapeStringForJson(phoneNumber)}",
-  "bookedToday": "${bookedToday}",
-  "parkingSpot": "${escapeStringForJson(bookedSpotID)}"
+  "bookedSpotId": "${bookedSpotID}"
 }''';
     return ApiManager.instance.makeApiCall(
-      callName: 'updateUser ',
+      callName: 'updateUser',
       apiUrl: '${baseUrl}/api/users/${id}',
       callType: ApiCallType.PUT,
       headers: {
@@ -327,11 +393,6 @@ class UpdateUserCall {
       alwaysAllowBody: false,
     );
   }
-
-  bool? today(dynamic response) => castToType<bool>(getJsonField(
-        response,
-        r'''$.bookedToday''',
-      ));
 }
 
 class DeleteUserCall {
@@ -384,39 +445,13 @@ class GetAllUsersCall {
   }
 }
 
-class ResetUsersCall {
-  Future<ApiCallResponse> call() async {
-    final baseUrl = UserManagementAPIGroup.getBaseUrl();
-
-    return ApiManager.instance.makeApiCall(
-      callName: 'resetUsers',
-      apiUrl: '${baseUrl}/api/users/reset',
-      callType: ApiCallType.POST,
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'ngrok-skip-browser-warning': 'true',
-      },
-      params: {},
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
 class AddUserrCall {
   Future<ApiCallResponse> call({
     String? firstName = '',
     String? lastName = '',
     String? email = '',
     String? phoneNumber = '',
-    bool? bookedToday,
-    String? bookedSpotId = '',
+    int? bookedSpotId,
     String? id = '',
   }) async {
     final baseUrl = UserManagementAPIGroup.getBaseUrl();

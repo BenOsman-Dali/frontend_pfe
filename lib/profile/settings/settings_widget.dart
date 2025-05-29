@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
@@ -68,7 +69,10 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                           shape: BoxShape.circle,
                         ),
                         child: Image.network(
-                          currentUserPhoto,
+                          valueOrDefault<String>(
+                            currentUserPhoto,
+                            'https://lh3.googleusercontent.com/a/ACg8ocIjVkTssfnS2XIJyTImyaudigAO3us88oQRD06Wz3PgnOpVOA=s96-c',
+                          ),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -464,59 +468,84 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      var confirmDialogResponse = await showDialog<bool>(
-                            context: context,
-                            builder: (alertDialogContext) {
-                              return AlertDialog(
-                                content: Text(
-                                    'Are you sure that want to cancel your reservation ?'),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () => Navigator.pop(
-                                        alertDialogContext, false),
-                                    child: Text('Cancel'),
-                                  ),
-                                  TextButton(
-                                    onPressed: () =>
-                                        Navigator.pop(alertDialogContext, true),
-                                    child: Text('Yes'),
-                                  ),
-                                ],
-                              );
-                            },
-                          ) ??
-                          false;
-                      if (confirmDialogResponse) {
-                        _model.salah =
-                            await UserManagementAPIGroup.getUserByIdCall.call(
-                          id: currentUserUid,
-                        );
+                      await Future.wait([
+                        Future(() async {
+                          var confirmDialogResponse = await showDialog<bool>(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    content: Text(
+                                        'Are you sure that want to cancel your reservation ?'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, false),
+                                        child: Text('Cancel'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, true),
+                                        child: Text('Yes'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ) ??
+                              false;
+                          if (confirmDialogResponse) {
+                            _model.salah = await UserManagementAPIGroup
+                                .getUserByIdCall
+                                .call(
+                              id: currentUserUid,
+                            );
 
-                        if ((_model.salah?.succeeded ?? true)) {
-                          _model.apiResult3sd = await SpotsManagementAPIGroup
-                              .updateParkingSpotCall
-                              .call(
-                            id: getJsonField(
-                              (_model.salah?.jsonBody ?? ''),
-                              r'''$.parkingSpot''',
-                            ),
-                            available: true,
-                          );
-                        }
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              'Reservation cancelled ',
-                              style: TextStyle(
-                                color: FlutterFlowTheme.of(context).primaryText,
+                            if ((_model.salah?.succeeded ?? true)) {
+                              _model.abdallah = await SpotsManagementAPIGroup
+                                  .updateParkingSpotCall
+                                  .call(
+                                id: getJsonField(
+                                  (_model.salah?.jsonBody ?? ''),
+                                  r'''$.bookedSpotId''',
+                                ),
+                                available: true,
+                              );
+
+                              _model.kamel = await UserManagementAPIGroup
+                                  .updateUserCall
+                                  .call(
+                                id: currentUserUid,
+                                firstName: valueOrDefault(
+                                    currentUserDocument?.firstName, ''),
+                                lastName: valueOrDefault(
+                                    currentUserDocument?.lastName, ''),
+                                email: currentUserEmail,
+                                phoneNumber: currentPhoneNumber,
+                                bookedSpotID: null,
+                              );
+                            }
+                          }
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Reservation cancelled ',
+                                style: TextStyle(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                ),
                               ),
+                              duration: Duration(milliseconds: 4000),
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).secondary,
                             ),
-                            duration: Duration(milliseconds: 4000),
-                            backgroundColor:
-                                FlutterFlowTheme.of(context).secondary,
-                          ),
-                        );
-                      }
+                          );
+                        }),
+                        Future(() async {
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            bookedToday: false,
+                          ));
+                        }),
+                      ]);
 
                       safeSetState(() {});
                     },
@@ -656,7 +685,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                     ),
                   ),
                 ),
-              ].addToEnd(SizedBox(height: 80.0)),
+              ].addToEnd(SizedBox(height: 100.0)),
             ),
           ),
         ),

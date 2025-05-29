@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'edit_profile_widget.dart' show EditProfileWidget;
 import 'package:flutter/material.dart';
@@ -35,6 +36,8 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
   TextEditingController? vehicleBrandTextController;
   String? vehicleBrandSelectedOption;
   String? Function(BuildContext, String?)? vehicleBrandTextControllerValidator;
+  // Stores action output result for [Backend Call - API (updateUser)] action in Button widget.
+  ApiCallResponse? hamma;
 
   @override
   void initState(BuildContext context) {}

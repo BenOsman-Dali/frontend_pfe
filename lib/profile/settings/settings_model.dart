@@ -7,10 +7,12 @@ import 'package:flutter/material.dart';
 class SettingsModel extends FlutterFlowModel<SettingsWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (getUserById )] action in Container widget.
+  // Stores action output result for [Backend Call - API (getUserById)] action in Container widget.
   ApiCallResponse? salah;
   // Stores action output result for [Backend Call - API (updateParkingSpot)] action in Container widget.
-  ApiCallResponse? apiResult3sd;
+  ApiCallResponse? abdallah;
+  // Stores action output result for [Backend Call - API (updateUser)] action in Container widget.
+  ApiCallResponse? kamel;
 
   @override
   void initState(BuildContext context) {}

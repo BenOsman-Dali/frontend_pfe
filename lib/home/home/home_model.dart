@@ -9,8 +9,12 @@ class HomeModel extends FlutterFlowModel<HomeWidget> {
 
   // Stores action output result for [Backend Call - API (getAllParkingSpots)] action in home widget.
   ApiCallResponse? apiResultzg1;
-  // Stores action output result for [Backend Call - API (getUserById )] action in home widget.
+  // Stores action output result for [Backend Call - API (getUserById)] action in home widget.
   ApiCallResponse? apiResultlcs;
+  // Stores action output result for [Backend Call - API (getPercentage)] action in home widget.
+  ApiCallResponse? percentage;
+  // Stores action output result for [Backend Call - API (nonBookedPercentage)] action in home widget.
+  ApiCallResponse? dali;
 
   @override
   void initState(BuildContext context) {}

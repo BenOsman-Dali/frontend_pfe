@@ -286,7 +286,6 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                       ),
                       icon: Icon(
                         Icons.home,
-                        color: FlutterFlowTheme.of(context).primaryText,
                         size: 20.0,
                       ),
                       options: FFButtonOptions(
@@ -296,6 +295,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconColor: FlutterFlowTheme.of(context).primaryText,
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         textStyle: FlutterFlowTheme.of(context)
                             .titleSmall

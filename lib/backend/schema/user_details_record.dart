@@ -65,6 +65,11 @@ class UserDetailsRecord extends FirestoreRecord {
   String get phoneNumber => _phoneNumber ?? '';
   bool hasPhoneNumber() => _phoneNumber != null;
 
+  // "booked_today" field.
+  bool? _bookedToday;
+  bool get bookedToday => _bookedToday ?? false;
+  bool hasBookedToday() => _bookedToday != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _uid = snapshotData['uid'] as String?;
@@ -76,6 +81,7 @@ class UserDetailsRecord extends FirestoreRecord {
     _vehicleBrand = snapshotData['vehicle_brand'] as String?;
     _password = snapshotData['password'] as String?;
     _phoneNumber = snapshotData['phone_number'] as String?;
+    _bookedToday = snapshotData['booked_today'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -123,6 +129,7 @@ Map<String, dynamic> createUserDetailsRecordData({
   String? vehicleBrand,
   String? password,
   String? phoneNumber,
+  bool? bookedToday,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -136,6 +143,7 @@ Map<String, dynamic> createUserDetailsRecordData({
       'vehicle_brand': vehicleBrand,
       'password': password,
       'phone_number': phoneNumber,
+      'booked_today': bookedToday,
     }.withoutNulls,
   );
 
@@ -156,7 +164,8 @@ class UserDetailsRecordDocumentEquality implements Equality<UserDetailsRecord> {
         e1?.displayName == e2?.displayName &&
         e1?.vehicleBrand == e2?.vehicleBrand &&
         e1?.password == e2?.password &&
-        e1?.phoneNumber == e2?.phoneNumber;
+        e1?.phoneNumber == e2?.phoneNumber &&
+        e1?.bookedToday == e2?.bookedToday;
   }
 
   @override
@@ -170,7 +179,8 @@ class UserDetailsRecordDocumentEquality implements Equality<UserDetailsRecord> {
         e?.displayName,
         e?.vehicleBrand,
         e?.password,
-        e?.phoneNumber
+        e?.phoneNumber,
+        e?.bookedToday
       ]);
 
   @override

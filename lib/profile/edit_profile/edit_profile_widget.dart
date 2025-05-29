@@ -74,6 +74,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
               size: 20.0,
             ),
             onPressed: () async {
+              FFAppState().changesSaved = false;
+              safeSetState(() {});
               context.safePop();
             },
           ),
@@ -1122,7 +1124,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                         vehicleBrand: valueOrDefault(
                             currentUserDocument?.vehicleBrand, ''),
                       ));
-                      await UserManagementAPIGroup.updateUserCall.call(
+                      _model.hamma =
+                          await UserManagementAPIGroup.updateUserCall.call(
                         firstName: _model.firstNameTextController.text,
                         lastName: _model.lastNameTextController.text,
                         email: _model.emailTextController.text,
@@ -1131,6 +1134,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       );
 
                       FFAppState().changesSaved = true;
+                      safeSetState(() {});
+
                       safeSetState(() {});
                     },
                     text: FFLocalizations.of(context).getText(

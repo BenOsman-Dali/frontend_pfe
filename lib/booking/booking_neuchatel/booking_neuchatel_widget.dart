@@ -1,8 +1,12 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'booking_neuchatel_model.dart';
@@ -27,6 +31,176 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => BookingNeuchatelModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await Future.wait([
+        Future(() async {
+          _model.apiResultzg1 =
+              await SpotsManagementAPIGroup.getAllParkingSpotsCall.call();
+
+          if ((_model.apiResultzg1?.succeeded ?? true)) {
+            FFAppState().n1Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[0].available''',
+            );
+            FFAppState().n2Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[1].available''',
+            );
+            FFAppState().n3Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[2].available''',
+            );
+            FFAppState().n4Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[3].available''',
+            );
+            FFAppState().n5Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[4].available''',
+            );
+            FFAppState().n6Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[5].available''',
+            );
+            FFAppState().n7Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[6].available''',
+            );
+            FFAppState().n8Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[7].available''',
+            );
+            FFAppState().n9Available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[8].available''',
+            );
+            FFAppState().update(() {});
+            FFAppState().c1available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[9].available''',
+            );
+            FFAppState().c2available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[10].available''',
+            );
+            FFAppState().c3available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[11].available''',
+            );
+            FFAppState().c4available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[12].available''',
+            );
+            FFAppState().c5available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[13].available''',
+            );
+            FFAppState().c6available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[14].available''',
+            );
+            FFAppState().c7available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[15].available''',
+            );
+            FFAppState().c8available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[16].available''',
+            );
+            FFAppState().c9available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[17].available''',
+            );
+            FFAppState().update(() {});
+            FFAppState().b1available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[18].available''',
+            );
+            FFAppState().b2available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[19].available''',
+            );
+            FFAppState().b3available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[20].available''',
+            );
+            FFAppState().b4available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[21].available''',
+            );
+            FFAppState().b5available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[22].available''',
+            );
+            FFAppState().b6available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[23].available''',
+            );
+            FFAppState().b7available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[24].available''',
+            );
+            FFAppState().b8available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[25].available''',
+            );
+            FFAppState().b9available = getJsonField(
+              (_model.apiResultzg1?.jsonBody ?? ''),
+              r'''$[26].available''',
+            );
+            safeSetState(() {});
+          }
+        }),
+        Future(() async {
+          _model.apiResultlcs =
+              await UserManagementAPIGroup.getUserByIdCall.call(
+            id: currentUserUid,
+          );
+
+          if ((_model.apiResultlcs?.succeeded ?? true)) {
+            await currentUserReference!.update(createUserDetailsRecordData(
+              email: getJsonField(
+                (_model.apiResultlcs?.jsonBody ?? ''),
+                r'''$.email''',
+              ).toString().toString(),
+              uid: getJsonField(
+                (_model.apiResultlcs?.jsonBody ?? ''),
+                r'''$.id''',
+              ).toString().toString(),
+              firstName: getJsonField(
+                (_model.apiResultlcs?.jsonBody ?? ''),
+                r'''$.firstName''',
+              ).toString().toString(),
+              lastName: getJsonField(
+                (_model.apiResultlcs?.jsonBody ?? ''),
+                r'''$.lastName''',
+              ).toString().toString(),
+              phoneNumber: getJsonField(
+                (_model.apiResultlcs?.jsonBody ?? ''),
+                r'''$.phoneNumber''',
+              ).toString().toString(),
+            ));
+            FFAppState().booked =
+                valueOrDefault<bool>(currentUserDocument?.bookedToday, false);
+            safeSetState(() {});
+          }
+        }),
+        Future(() async {
+          if (dateTimeFormat(
+                "Hm",
+                getCurrentTimestamp,
+                locale: FFLocalizations.of(context).languageCode,
+              ) ==
+              '00:00') {
+            await currentUserReference!.update(createUserDetailsRecordData(
+              bookedToday: false,
+            ));
+          }
+        }),
+      ]);
+    });
   }
 
   @override
@@ -324,10 +498,14 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -456,10 +634,14 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -588,10 +770,14 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -720,10 +906,14 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -852,10 +1042,14 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -995,11 +1189,15 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                                           }
                                                         }
                                                       },
-                                                      side: BorderSide(
-                                                        width: 2,
-                                                        color:
-                                                            Color(0x004B39EF),
-                                                      ),
+                                                      side:
+                                                          (Color(0x004B39EF) !=
+                                                                  null)
+                                                              ? BorderSide(
+                                                                  width: 2,
+                                                                  color: Color(
+                                                                      0x004B39EF),
+                                                                )
+                                                              : null,
                                                       activeColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1130,10 +1328,14 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -1262,10 +1464,14 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -1394,10 +1600,14 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                                                       }
                                                     }
                                                   },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: Color(0x004B39EF),
-                                                  ),
+                                                  side: (Color(0x004B39EF) !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: Color(
+                                                              0x004B39EF),
+                                                        )
+                                                      : null,
                                                   activeColor:
                                                       FlutterFlowTheme.of(
                                                               context)

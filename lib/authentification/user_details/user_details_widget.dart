@@ -504,6 +504,7 @@ class _UserDetailsWidgetState extends State<UserDetailsWidget> {
                                       .toString(),
                                   phoneNumber:
                                       _model.phoneNumberTextController.text,
+                                  bookedToday: false,
                                 ));
 
                                 context.pushNamed(

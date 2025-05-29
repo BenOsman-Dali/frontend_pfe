@@ -201,10 +201,14 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               safeSetState(
                                   () => _model.checkboxValue = newValue!);
                             },
-                            side: BorderSide(
-                              width: 2,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                            ),
+                            side: (FlutterFlowTheme.of(context).primaryText !=
+                                    null)
+                                ? BorderSide(
+                                    width: 2,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                  )
+                                : null,
                             activeColor:
                                 FlutterFlowTheme.of(context).secondaryText,
                             checkColor: FlutterFlowTheme.of(context).info,
@@ -334,10 +338,15 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             available: FFAppState().n1Available,
                           );
 
-                          _model.apiResultoti =
-                              await UserManagementAPIGroup.updateUserCall.call(
+                          await UserManagementAPIGroup.updateUserCall.call(
                             id: currentUserUid,
-                            bookedSpotID: '1',
+                            bookedSpotID: 1,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
                           );
                         }
                       }),
@@ -351,6 +360,18 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 5,
                             available: FFAppState().n2Available,
                           );
+
+                          _model.apiResultoti =
+                              await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 5,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
                         }
                       }),
                       Future(() async {
@@ -362,6 +383,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               .call(
                             id: 6,
                             available: FFAppState().n3Available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 6,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
                           );
                         }
                       }),
@@ -375,6 +407,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 7,
                             available: FFAppState().n4Available,
                           );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 7,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
                         }
                       }),
                       Future(() async {
@@ -386,6 +429,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               .call(
                             id: 8,
                             available: FFAppState().n5Available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 8,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
                           );
                         }
                       }),
@@ -399,6 +453,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 9,
                             available: FFAppState().n6Available,
                           );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 9,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
                         }
                       }),
                       Future(() async {
@@ -410,6 +475,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               .call(
                             id: 10,
                             available: FFAppState().n7Available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 10,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
                           );
                         }
                       }),
@@ -423,6 +499,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 11,
                             available: FFAppState().n8Available,
                           );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 11,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
                         }
                       }),
                       Future(() async {
@@ -435,6 +522,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 12,
                             available: FFAppState().n9Available,
                           );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 12,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
                         }
                       }),
                       Future(() async {
@@ -446,6 +544,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 13,
                             available: FFAppState().c1available,
                           );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 13,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
                         }
                       }),
                       Future(() async {
@@ -456,6 +565,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               .call(
                             id: 14,
                             available: FFAppState().c2available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 14,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
                           );
                         }
                       }),
@@ -469,6 +589,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 15,
                             available: FFAppState().c3available,
                           );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 15,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
                         }
                       }),
                       Future(() async {
@@ -479,6 +610,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               .call(
                             id: 16,
                             available: FFAppState().c4available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 16,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
                           );
                         }
                       }),
@@ -491,6 +633,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 17,
                             available: FFAppState().c5available,
                           );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 17,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
                         }
                       }),
                       Future(() async {
@@ -501,6 +654,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               .call(
                             id: 18,
                             available: FFAppState().c6available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 18,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
                           );
                         }
                       }),
@@ -513,6 +677,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 19,
                             available: FFAppState().c7available,
                           );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 19,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
                         }
                       }),
                       Future(() async {
@@ -523,6 +698,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               .call(
                             id: 20,
                             available: FFAppState().c8available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 20,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
                           );
                         }
                       }),
@@ -535,6 +721,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 21,
                             available: FFAppState().c9available,
                           );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 21,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
                         }
                       }),
                       Future(() async {
@@ -545,6 +742,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               .call(
                             id: 22,
                             available: FFAppState().b1available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 22,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
                           );
                         }
                       }),
@@ -557,6 +765,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 23,
                             available: FFAppState().b2available,
                           );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 23,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
                         }
                       }),
                       Future(() async {
@@ -567,6 +786,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               .call(
                             id: 24,
                             available: FFAppState().b3available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 24,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
                           );
                         }
                       }),
@@ -579,6 +809,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 25,
                             available: FFAppState().b4available,
                           );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 25,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
                         }
                       }),
                       Future(() async {
@@ -589,6 +830,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               .call(
                             id: 26,
                             available: FFAppState().b5available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 26,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
                           );
                         }
                       }),
@@ -601,6 +853,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 27,
                             available: FFAppState().b6available,
                           );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 27,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
                         }
                       }),
                       Future(() async {
@@ -611,6 +874,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               .call(
                             id: 28,
                             available: FFAppState().b7available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 28,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
                           );
                         }
                       }),
@@ -623,6 +897,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             id: 29,
                             available: FFAppState().b8available,
                           );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 29,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
                         }
                       }),
                       Future(() async {
@@ -633,6 +918,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               .call(
                             id: 30,
                             available: FFAppState().b9available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 30,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
                           );
                         }
                       }),
