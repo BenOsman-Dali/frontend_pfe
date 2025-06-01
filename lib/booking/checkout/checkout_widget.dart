@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -114,10 +115,39 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Text(
-                          FFLocalizations.of(context).getText(
-                            '4qlh9jcl' /* You are logged in as  */,
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              5.0, 5.0, 0.0, 0.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              '4qlh9jcl' /* You are logged in as  */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  font: GoogleFonts.roboto(
+                                    fontWeight: FontWeight.bold,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                                  fontSize: 20.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
                           ),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                      child: AuthUserStreamWidget(
+                        builder: (context) => Text(
+                          '${valueOrDefault(currentUserDocument?.firstName, '')} ${valueOrDefault(currentUserDocument?.lastName, '')}',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     font: GoogleFonts.roboto(
@@ -134,25 +164,6 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         .fontStyle,
                                   ),
                         ),
-                      ],
-                    ),
-                    AuthUserStreamWidget(
-                      builder: (context) => Text(
-                        currentUserDisplayName,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.roboto(
-                                fontWeight: FontWeight.bold,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
-                              fontSize: 20.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
                       ),
                     ),
                   ].addToEnd(SizedBox(height: 10.0)),
@@ -237,29 +248,39 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         .fontStyle,
                                   ),
                         ),
-                        Text(
-                          FFLocalizations.of(context).getText(
-                            'fwr7r5pe' /* Terms & Conditions and Privacy */,
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.roboto(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(TermsWidget.routeName);
+                          },
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'fwr7r5pe' /* Terms & Conditions and Privacy */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  font: GoogleFonts.roboto(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontStyle,
-                                    decoration: TextDecoration.underline,
                                   ),
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                  decoration: TextDecoration.underline,
+                                ),
+                          ),
                         ),
                       ],
                     ),
@@ -348,6 +369,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            neuchatel: true,
+                            n1: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -357,14 +384,14 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                           _model.apiResultua5 = await SpotsManagementAPIGroup
                               .updateParkingSpotCall
                               .call(
-                            id: 5,
+                            id: 2,
                             available: FFAppState().n2Available,
                           );
 
                           _model.apiResultoti =
                               await UserManagementAPIGroup.updateUserCall.call(
                             id: currentUserUid,
-                            bookedSpotID: 5,
+                            bookedSpotID: 2,
                             firstName: valueOrDefault(
                                 currentUserDocument?.firstName, ''),
                             lastName: valueOrDefault(
@@ -372,6 +399,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            neuchatel: true,
+                            n2: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -381,8 +414,95 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                           _model.apiResultd0c = await SpotsManagementAPIGroup
                               .updateParkingSpotCall
                               .call(
-                            id: 6,
+                            id: 3,
                             available: FFAppState().n3Available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 3,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            neuchatel: true,
+                            n3: true,
+                          ));
+                        }
+                      }),
+                      Future(() async {
+                        if (FFAppState().n4 == true) {
+                          FFAppState().n4Available = false;
+                          FFAppState().update(() {});
+                          _model.apiResult512 = await SpotsManagementAPIGroup
+                              .updateParkingSpotCall
+                              .call(
+                            id: 4,
+                            available: FFAppState().n4Available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 4,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            neuchatel: true,
+                            n4: true,
+                          ));
+                        }
+                      }),
+                      Future(() async {
+                        if (FFAppState().n5 == true) {
+                          FFAppState().n5Available = false;
+                          FFAppState().update(() {});
+                          _model.apiResultb2v = await SpotsManagementAPIGroup
+                              .updateParkingSpotCall
+                              .call(
+                            id: 5,
+                            available: FFAppState().n5Available,
+                          );
+
+                          await UserManagementAPIGroup.updateUserCall.call(
+                            id: currentUserUid,
+                            bookedSpotID: 5,
+                            firstName: valueOrDefault(
+                                currentUserDocument?.firstName, ''),
+                            lastName: valueOrDefault(
+                                currentUserDocument?.lastName, ''),
+                            email: currentUserEmail,
+                            phoneNumber: currentPhoneNumber,
+                          );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            neuchatel: true,
+                            n5: true,
+                          ));
+                        }
+                      }),
+                      Future(() async {
+                        if (FFAppState().n6 == true) {
+                          FFAppState().n6Available = false;
+                          FFAppState().update(() {});
+                          _model.apiResult8mb = await SpotsManagementAPIGroup
+                              .updateParkingSpotCall
+                              .call(
+                            id: 6,
+                            available: FFAppState().n6Available,
                           );
 
                           await UserManagementAPIGroup.updateUserCall.call(
@@ -395,17 +515,23 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            neuchatel: true,
+                            n6: false,
+                          ));
                         }
                       }),
                       Future(() async {
-                        if (FFAppState().n4 == true) {
-                          FFAppState().n4Available = false;
+                        if (FFAppState().n7 == true) {
+                          FFAppState().n7Available = false;
                           FFAppState().update(() {});
-                          _model.apiResult512 = await SpotsManagementAPIGroup
+                          _model.apiResultb7c = await SpotsManagementAPIGroup
                               .updateParkingSpotCall
                               .call(
                             id: 7,
-                            available: FFAppState().n4Available,
+                            available: FFAppState().n7Available,
                           );
 
                           await UserManagementAPIGroup.updateUserCall.call(
@@ -418,17 +544,23 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            neuchatel: true,
+                            n7: true,
+                          ));
                         }
                       }),
                       Future(() async {
-                        if (FFAppState().n5 == true) {
-                          FFAppState().n5Available = false;
+                        if (FFAppState().n8 == true) {
+                          FFAppState().n8Available = false;
                           FFAppState().update(() {});
-                          _model.apiResultb2v = await SpotsManagementAPIGroup
+                          _model.apiResulthi4 = await SpotsManagementAPIGroup
                               .updateParkingSpotCall
                               .call(
                             id: 8,
-                            available: FFAppState().n5Available,
+                            available: FFAppState().n8Available,
                           );
 
                           await UserManagementAPIGroup.updateUserCall.call(
@@ -441,17 +573,23 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            neuchatel: true,
+                            n8: true,
+                          ));
                         }
                       }),
                       Future(() async {
-                        if (FFAppState().n6 == true) {
-                          FFAppState().n6Available = false;
+                        if (FFAppState().n9 == true) {
+                          FFAppState().n9Available = false;
                           FFAppState().update(() {});
-                          _model.apiResult8mb = await SpotsManagementAPIGroup
+                          _model.apiResult9n6 = await SpotsManagementAPIGroup
                               .updateParkingSpotCall
                               .call(
                             id: 9,
-                            available: FFAppState().n6Available,
+                            available: FFAppState().n9Available,
                           );
 
                           await UserManagementAPIGroup.updateUserCall.call(
@@ -464,75 +602,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
-                        }
-                      }),
-                      Future(() async {
-                        if (FFAppState().n7 == true) {
-                          FFAppState().n7Available = false;
-                          FFAppState().update(() {});
-                          _model.apiResultb7c = await SpotsManagementAPIGroup
-                              .updateParkingSpotCall
-                              .call(
-                            id: 10,
-                            available: FFAppState().n7Available,
-                          );
 
-                          await UserManagementAPIGroup.updateUserCall.call(
-                            id: currentUserUid,
-                            bookedSpotID: 10,
-                            firstName: valueOrDefault(
-                                currentUserDocument?.firstName, ''),
-                            lastName: valueOrDefault(
-                                currentUserDocument?.lastName, ''),
-                            email: currentUserEmail,
-                            phoneNumber: currentPhoneNumber,
-                          );
-                        }
-                      }),
-                      Future(() async {
-                        if (FFAppState().n8 == true) {
-                          FFAppState().n8Available = false;
-                          FFAppState().update(() {});
-                          _model.apiResulthi4 = await SpotsManagementAPIGroup
-                              .updateParkingSpotCall
-                              .call(
-                            id: 11,
-                            available: FFAppState().n8Available,
-                          );
-
-                          await UserManagementAPIGroup.updateUserCall.call(
-                            id: currentUserUid,
-                            bookedSpotID: 11,
-                            firstName: valueOrDefault(
-                                currentUserDocument?.firstName, ''),
-                            lastName: valueOrDefault(
-                                currentUserDocument?.lastName, ''),
-                            email: currentUserEmail,
-                            phoneNumber: currentPhoneNumber,
-                          );
-                        }
-                      }),
-                      Future(() async {
-                        if (FFAppState().n9 == true) {
-                          FFAppState().n9Available = false;
-                          FFAppState().update(() {});
-                          _model.apiResult9n6 = await SpotsManagementAPIGroup
-                              .updateParkingSpotCall
-                              .call(
-                            id: 12,
-                            available: FFAppState().n9Available,
-                          );
-
-                          await UserManagementAPIGroup.updateUserCall.call(
-                            id: currentUserUid,
-                            bookedSpotID: 12,
-                            firstName: valueOrDefault(
-                                currentUserDocument?.firstName, ''),
-                            lastName: valueOrDefault(
-                                currentUserDocument?.lastName, ''),
-                            email: currentUserEmail,
-                            phoneNumber: currentPhoneNumber,
-                          );
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            neuchatel: true,
+                            n9: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -555,6 +630,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            constance: true,
+                            c1: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -577,6 +658,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            constance: true,
+                            c2: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -600,6 +687,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            constance: true,
+                            c3: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -622,6 +715,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            constance: true,
+                            c4: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -644,6 +743,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            constance: true,
+                            c5: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -666,6 +771,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            constance: true,
+                            c6: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -688,6 +799,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            constance: true,
+                            c7: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -710,6 +827,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            constance: true,
+                            c8: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -732,6 +855,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            constance: true,
+                            c9: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -754,6 +883,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            biwa: true,
+                            b1: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -776,6 +911,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            biwa: true,
+                            b2: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -798,6 +939,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            biwa: true,
+                            b3: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -820,6 +967,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            biwa: true,
+                            b4: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -842,6 +995,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            biwa: true,
+                            b5: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -864,6 +1023,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            biwa: true,
+                            b6: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -886,6 +1051,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            biwa: true,
+                            b7: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -908,6 +1079,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            biwa: true,
+                            b8: true,
+                          ));
                         }
                       }),
                       Future(() async {
@@ -930,6 +1107,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             email: currentUserEmail,
                             phoneNumber: currentPhoneNumber,
                           );
+
+                          await currentUserReference!
+                              .update(createUserDetailsRecordData(
+                            biwa: true,
+                            b9: true,
+                          ));
                         }
                       }),
                     ]);

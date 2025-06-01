@@ -332,10 +332,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      hintText:
-                                          FFLocalizations.of(context).getText(
-                                        'vvbjnfk1' /* First name * */,
-                                      ),
+                                      hintText: valueOrDefault(
+                                          currentUserDocument?.firstName, ''),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -513,9 +511,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
-                                hintText: FFLocalizations.of(context).getText(
-                                  '14z1w7e3' /* Last name * */,
-                                ),
+                                hintText: valueOrDefault(
+                                    currentUserDocument?.lastName, ''),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -676,9 +673,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  hintText: FFLocalizations.of(context).getText(
-                                    'gq6oebl4' /*  Email * */,
-                                  ),
+                                  hintText: currentUserEmail,
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -840,9 +835,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
-                                hintText: FFLocalizations.of(context).getText(
-                                  'mnxuq0ng' /* Phone number * */,
-                                ),
+                                hintText: currentPhoneNumber,
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -1003,9 +996,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
-                                hintText: FFLocalizations.of(context).getText(
-                                  'mx14zd81' /* Vehicle brand * */,
-                                ),
+                                hintText: valueOrDefault(
+                                    currentUserDocument?.vehicleBrand, ''),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

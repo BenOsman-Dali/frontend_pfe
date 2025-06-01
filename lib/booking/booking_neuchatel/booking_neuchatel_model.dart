@@ -11,6 +11,30 @@ class BookingNeuchatelModel extends FlutterFlowModel<BookingNeuchatelWidget> {
   ApiCallResponse? apiResultzg1;
   // Stores action output result for [Backend Call - API (getUserById)] action in booking_neuchatel widget.
   ApiCallResponse? apiResultlcs;
+  // Stores action output result for [Backend Call - API (getParkingSpotById)] action in booking_neuchatel widget.
+  ApiCallResponse? podolski;
+  // Stores action output result for [Backend Call - API (getParkingSpotById)] action in booking_neuchatel widget.
+  ApiCallResponse? podolski0;
+  // Stores action output result for [Backend Call - API (getParkingSpotById)] action in booking_neuchatel widget.
+  ApiCallResponse? podolski1;
+  // Stores action output result for [Backend Call - API (getParkingSpotById)] action in booking_neuchatel widget.
+  ApiCallResponse? podolski2;
+  // Stores action output result for [Backend Call - API (getParkingSpotById)] action in booking_neuchatel widget.
+  ApiCallResponse? podolski3;
+  // Stores action output result for [Backend Call - API (getParkingSpotById)] action in booking_neuchatel widget.
+  ApiCallResponse? podolski4;
+  // Stores action output result for [Backend Call - API (getParkingSpotById)] action in booking_neuchatel widget.
+  ApiCallResponse? podolski5;
+  // Stores action output result for [Backend Call - API (getParkingSpotById)] action in booking_neuchatel widget.
+  ApiCallResponse? podolski6;
+  // Stores action output result for [Backend Call - API (getParkingSpotById)] action in booking_neuchatel widget.
+  ApiCallResponse? podolski7;
+  // Stores action output result for [Backend Call - API (getParkingSpotById)] action in booking_neuchatel widget.
+  ApiCallResponse? podolski8;
+  // Stores action output result for [Backend Call - API (getParkingSpotById)] action in booking_neuchatel widget.
+  ApiCallResponse? podolski9;
+  // Stores action output result for [Backend Call - API (getParkingSpotById)] action in booking_neuchatel widget.
+  ApiCallResponse? podolski10;
   // State field(s) for Checkbox1 widget.
   bool? checkbox1Value;
   // State field(s) for Checkbox2 widget.
@@ -29,6 +53,12 @@ class BookingNeuchatelModel extends FlutterFlowModel<BookingNeuchatelWidget> {
   bool? checkbox8Value;
   // State field(s) for Checkbox9 widget.
   bool? checkbox9Value;
+  // State field(s) for Checkbox10 widget.
+  bool? checkbox10Value;
+  // State field(s) for Checkbox11 widget.
+  bool? checkbox11Value;
+  // State field(s) for Checkbox12 widget.
+  bool? checkbox12Value;
 
   @override
   void initState(BuildContext context) {}

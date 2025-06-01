@@ -192,7 +192,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
     'i8ikcg4b': {
-      'en': 'Your booking details:',
+      'en': 'Your latest booking details',
       'ar': '',
       'es': '',
       'fr': '',
@@ -436,21 +436,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'it': '',
     },
-    'frk0oi3o': {
+    '69kwoow9': {
       'en': 'Parking Spot Availability Today',
       'ar': '',
       'es': '',
       'fr': '',
       'it': '',
     },
-    'ijuot70u': {
+    'jfcucgu6': {
       'en': 'Booked',
       'ar': '',
       'es': '',
       'fr': '',
       'it': '',
     },
-    '4glf1kci': {
+    'i093fj9z': {
       'en': 'Available',
       'ar': '',
       'es': '',
@@ -483,41 +483,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'v3fqwp08': {
       'en': 'Your changes have been successfully saved.',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
-    'vvbjnfk1': {
-      'en': 'First name *',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
-    '14z1w7e3': {
-      'en': 'Last name *',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
-    'gq6oebl4': {
-      'en': ' Email *',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
-    'mnxuq0ng': {
-      'en': 'Phone number *',
-      'ar': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-    },
-    'mx14zd81': {
-      'en': 'Vehicle brand *',
       'ar': '',
       'es': '',
       'fr': '',
@@ -605,6 +570,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lcclx3kd': {
       'en': '9',
+      'ar': '',
+      'es': '',
+      'fr': '',
+      'it': '',
+    },
+    'v33a8txe': {
+      'en': '10',
+      'ar': '',
+      'es': '',
+      'fr': '',
+      'it': '',
+    },
+    'ok6o455h': {
+      'en': '11',
+      'ar': '',
+      'es': '',
+      'fr': '',
+      'it': '',
+    },
+    '2au50yii': {
+      'en': '12',
       'ar': '',
       'es': '',
       'fr': '',

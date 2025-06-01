@@ -199,6 +199,108 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
             ));
           }
         }),
+        Future(() async {
+          _model.podolski =
+              await SpotsManagementAPIGroup.getParkingSpotByIdCall.call(
+            id: 10,
+          );
+
+          if ((_model.podolski?.succeeded ?? true)) {
+            await currentUserReference!.update(createUserDetailsRecordData(
+              n10appears: true,
+            ));
+          } else {
+            await currentUserReference!.update(createUserDetailsRecordData(
+              n10appears: false,
+            ));
+          }
+        }),
+        Future(() async {
+          _model.podolski0 =
+              await SpotsManagementAPIGroup.getParkingSpotByIdCall.call(
+            id: 1,
+          );
+        }),
+        Future(() async {
+          _model.podolski1 =
+              await SpotsManagementAPIGroup.getParkingSpotByIdCall.call(
+            id: 2,
+          );
+        }),
+        Future(() async {
+          _model.podolski2 =
+              await SpotsManagementAPIGroup.getParkingSpotByIdCall.call(
+            id: 3,
+          );
+        }),
+        Future(() async {
+          _model.podolski3 =
+              await SpotsManagementAPIGroup.getParkingSpotByIdCall.call(
+            id: 4,
+          );
+        }),
+        Future(() async {
+          _model.podolski4 =
+              await SpotsManagementAPIGroup.getParkingSpotByIdCall.call(
+            id: 5,
+          );
+        }),
+        Future(() async {
+          _model.podolski5 =
+              await SpotsManagementAPIGroup.getParkingSpotByIdCall.call(
+            id: 6,
+          );
+        }),
+        Future(() async {
+          _model.podolski6 =
+              await SpotsManagementAPIGroup.getParkingSpotByIdCall.call(
+            id: 7,
+          );
+        }),
+        Future(() async {
+          _model.podolski7 =
+              await SpotsManagementAPIGroup.getParkingSpotByIdCall.call(
+            id: 8,
+          );
+        }),
+        Future(() async {
+          _model.podolski8 =
+              await SpotsManagementAPIGroup.getParkingSpotByIdCall.call(
+            id: 9,
+          );
+        }),
+        Future(() async {
+          _model.podolski9 =
+              await SpotsManagementAPIGroup.getParkingSpotByIdCall.call(
+            id: 12,
+          );
+
+          if ((_model.podolski9?.succeeded ?? true)) {
+            await currentUserReference!.update(createUserDetailsRecordData(
+              n12appears: true,
+            ));
+          } else {
+            await currentUserReference!.update(createUserDetailsRecordData(
+              n12appears: false,
+            ));
+          }
+        }),
+        Future(() async {
+          _model.podolski10 =
+              await SpotsManagementAPIGroup.getParkingSpotByIdCall.call(
+            id: 11,
+          );
+
+          if ((_model.podolski10?.succeeded ?? true)) {
+            await currentUserReference!.update(createUserDetailsRecordData(
+              n11appears: true,
+            ));
+          } else {
+            await currentUserReference!.update(createUserDetailsRecordData(
+              n11appears: false,
+            ));
+          }
+        }),
       ]);
     });
   }
@@ -422,1244 +524,1662 @@ class _BookingNeuchatelWidgetState extends State<BookingNeuchatelWidget> {
                           primary: false,
                           shrinkWrap: true,
                           children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Flexible(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        44.0, 33.0, 44.0, 3.0),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: FFAppState().n1Available
-                                            ? Color(0xFF39D2C0)
-                                            : Color(0xFFD81112),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                      ),
-                                      child: Stack(
-                                        children: [
-                                          if (FFAppState().n1Available &&
-                                              !FFAppState().booked)
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  -0.03, 0.01),
-                                              child: Theme(
-                                                data: ThemeData(
-                                                  checkboxTheme:
-                                                      CheckboxThemeData(
-                                                    visualDensity:
-                                                        VisualDensity.compact,
-                                                    materialTapTargetSize:
-                                                        MaterialTapTargetSize
-                                                            .shrinkWrap,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              2.0),
-                                                    ),
-                                                  ),
-                                                  unselectedWidgetColor:
-                                                      Color(0x004B39EF),
-                                                ),
-                                                child: Checkbox(
-                                                  value: _model
-                                                      .checkbox1Value ??= false,
-                                                  onChanged: (newValue) async {
-                                                    safeSetState(() =>
-                                                        _model.checkbox1Value =
-                                                            newValue!);
-                                                    if (newValue!) {
-                                                      FFAppState().selected =
-                                                          FFAppState()
-                                                                  .selected +
-                                                              1;
-                                                      safeSetState(() {});
-                                                      FFAppState().n1 = true;
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      if (FFAppState()
-                                                              .selected >
-                                                          0) {
-                                                        FFAppState().selected =
-                                                            FFAppState()
-                                                                    .selected +
-                                                                -1;
-                                                        safeSetState(() {});
-                                                        FFAppState().n1 = false;
-                                                        safeSetState(() {});
-                                                      }
-                                                    }
-                                                  },
-                                                  side: (Color(0x004B39EF) !=
-                                                          null)
-                                                      ? BorderSide(
-                                                          width: 2,
-                                                          color: Color(
-                                                              0x004B39EF),
-                                                        )
-                                                      : null,
-                                                  activeColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
-                                                  checkColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
-                                                ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 0.0, 0.0, 30.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'kcozyfys' /* 1  */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          font: GoogleFonts.roboto(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
+                            if ((_model.podolski0?.succeeded ?? true))
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Flexible(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          44.0, 33.0, 44.0, 3.0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: FFAppState().n1Available
+                                              ? Color(0xFF39D2C0)
+                                              : Color(0xFFD81112),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
                                           ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
                                         ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Flexible(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        44.0, 33.0, 44.0, 3.0),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: FFAppState().n2Available
-                                            ? Color(0xFF39D2C0)
-                                            : Color(0xFFD81112),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                      ),
-                                      child: Stack(
-                                        children: [
-                                          if (FFAppState().n2Available &&
-                                              !FFAppState().booked)
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  -0.03, 0.01),
-                                              child: Theme(
-                                                data: ThemeData(
-                                                  checkboxTheme:
-                                                      CheckboxThemeData(
-                                                    visualDensity:
-                                                        VisualDensity.compact,
-                                                    materialTapTargetSize:
-                                                        MaterialTapTargetSize
-                                                            .shrinkWrap,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              2.0),
-                                                    ),
-                                                  ),
-                                                  unselectedWidgetColor:
-                                                      Color(0x004B39EF),
-                                                ),
-                                                child: Checkbox(
-                                                  value: _model
-                                                      .checkbox2Value ??= false,
-                                                  onChanged: (newValue) async {
-                                                    safeSetState(() =>
-                                                        _model.checkbox2Value =
-                                                            newValue!);
-                                                    if (newValue!) {
-                                                      FFAppState().selected =
-                                                          FFAppState()
-                                                                  .selected +
-                                                              1;
-                                                      safeSetState(() {});
-                                                      FFAppState().n2 = true;
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      if (FFAppState()
-                                                              .selected >
-                                                          0) {
-                                                        FFAppState().selected =
-                                                            FFAppState()
-                                                                    .selected +
-                                                                -1;
-                                                        safeSetState(() {});
-                                                        FFAppState().n2 = false;
-                                                        safeSetState(() {});
-                                                      }
-                                                    }
-                                                  },
-                                                  side: (Color(0x004B39EF) !=
-                                                          null)
-                                                      ? BorderSide(
-                                                          width: 2,
-                                                          color: Color(
-                                                              0x004B39EF),
-                                                        )
-                                                      : null,
-                                                  activeColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
-                                                  checkColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
-                                                ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      4.0, 0.0, 4.0, 30.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      '7p7hp5z9' /* 2 */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          font: GoogleFonts.roboto(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
-                                          ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Flexible(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        44.0, 33.0, 44.0, 3.0),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: FFAppState().n3Available
-                                            ? Color(0xFF39D2C0)
-                                            : Color(0xFFD81112),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                      ),
-                                      child: Stack(
-                                        children: [
-                                          if (FFAppState().n3Available &&
-                                              !FFAppState().booked)
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  -0.03, 0.01),
-                                              child: Theme(
-                                                data: ThemeData(
-                                                  checkboxTheme:
-                                                      CheckboxThemeData(
-                                                    visualDensity:
-                                                        VisualDensity.compact,
-                                                    materialTapTargetSize:
-                                                        MaterialTapTargetSize
-                                                            .shrinkWrap,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              2.0),
-                                                    ),
-                                                  ),
-                                                  unselectedWidgetColor:
-                                                      Color(0x004B39EF),
-                                                ),
-                                                child: Checkbox(
-                                                  value: _model
-                                                      .checkbox3Value ??= false,
-                                                  onChanged: (newValue) async {
-                                                    safeSetState(() =>
-                                                        _model.checkbox3Value =
-                                                            newValue!);
-                                                    if (newValue!) {
-                                                      FFAppState().selected =
-                                                          FFAppState()
-                                                                  .selected +
-                                                              1;
-                                                      safeSetState(() {});
-                                                      FFAppState().n3 = true;
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      if (FFAppState()
-                                                              .selected >
-                                                          0) {
-                                                        FFAppState().selected =
-                                                            FFAppState()
-                                                                    .selected +
-                                                                -1;
-                                                        safeSetState(() {});
-                                                        FFAppState().n3 = false;
-                                                        safeSetState(() {});
-                                                      }
-                                                    }
-                                                  },
-                                                  side: (Color(0x004B39EF) !=
-                                                          null)
-                                                      ? BorderSide(
-                                                          width: 2,
-                                                          color: Color(
-                                                              0x004B39EF),
-                                                        )
-                                                      : null,
-                                                  activeColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
-                                                  checkColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
-                                                ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 0.0, 5.0, 30.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'y8y9ebvs' /* 3 */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          font: GoogleFonts.roboto(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
-                                          ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Flexible(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        44.0, 33.0, 44.0, 3.0),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: FFAppState().n4Available
-                                            ? Color(0xFF39D2C0)
-                                            : Color(0xFFD81112),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                      ),
-                                      child: Stack(
-                                        children: [
-                                          if (FFAppState().n4Available &&
-                                              !FFAppState().booked)
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  -0.03, 0.01),
-                                              child: Theme(
-                                                data: ThemeData(
-                                                  checkboxTheme:
-                                                      CheckboxThemeData(
-                                                    visualDensity:
-                                                        VisualDensity.compact,
-                                                    materialTapTargetSize:
-                                                        MaterialTapTargetSize
-                                                            .shrinkWrap,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              2.0),
-                                                    ),
-                                                  ),
-                                                  unselectedWidgetColor:
-                                                      Color(0x004B39EF),
-                                                ),
-                                                child: Checkbox(
-                                                  value: _model
-                                                      .checkbox4Value ??= false,
-                                                  onChanged: (newValue) async {
-                                                    safeSetState(() =>
-                                                        _model.checkbox4Value =
-                                                            newValue!);
-                                                    if (newValue!) {
-                                                      FFAppState().selected =
-                                                          FFAppState()
-                                                                  .selected +
-                                                              1;
-                                                      safeSetState(() {});
-                                                      FFAppState().n4 = true;
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      if (FFAppState()
-                                                              .selected >
-                                                          0) {
-                                                        FFAppState().selected =
-                                                            FFAppState()
-                                                                    .selected +
-                                                                -1;
-                                                        safeSetState(() {});
-                                                        FFAppState().n4 = false;
-                                                        safeSetState(() {});
-                                                      }
-                                                    }
-                                                  },
-                                                  side: (Color(0x004B39EF) !=
-                                                          null)
-                                                      ? BorderSide(
-                                                          width: 2,
-                                                          color: Color(
-                                                              0x004B39EF),
-                                                        )
-                                                      : null,
-                                                  activeColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
-                                                  checkColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
-                                                ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 0.0, 5.0, 30.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      '6h1r8ifn' /* 4 */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          font: GoogleFonts.roboto(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
-                                          ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Flexible(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        44.0, 33.0, 44.0, 3.0),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: FFAppState().n5Available
-                                            ? Color(0xFF39D2C0)
-                                            : Color(0xFFD81112),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                      ),
-                                      child: Stack(
-                                        children: [
-                                          if (FFAppState().n5Available &&
-                                              !FFAppState().booked)
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  -0.03, 0.01),
-                                              child: Theme(
-                                                data: ThemeData(
-                                                  checkboxTheme:
-                                                      CheckboxThemeData(
-                                                    visualDensity:
-                                                        VisualDensity.compact,
-                                                    materialTapTargetSize:
-                                                        MaterialTapTargetSize
-                                                            .shrinkWrap,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              2.0),
-                                                    ),
-                                                  ),
-                                                  unselectedWidgetColor:
-                                                      Color(0x004B39EF),
-                                                ),
-                                                child: Checkbox(
-                                                  value: _model
-                                                      .checkbox5Value ??= false,
-                                                  onChanged: (newValue) async {
-                                                    safeSetState(() =>
-                                                        _model.checkbox5Value =
-                                                            newValue!);
-                                                    if (newValue!) {
-                                                      FFAppState().selected =
-                                                          FFAppState()
-                                                                  .selected +
-                                                              1;
-                                                      safeSetState(() {});
-                                                      FFAppState().n5 = true;
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      if (FFAppState()
-                                                              .selected >
-                                                          0) {
-                                                        FFAppState().selected =
-                                                            FFAppState()
-                                                                    .selected +
-                                                                -1;
-                                                        safeSetState(() {});
-                                                        FFAppState().n5 = false;
-                                                        safeSetState(() {});
-                                                      }
-                                                    }
-                                                  },
-                                                  side: (Color(0x004B39EF) !=
-                                                          null)
-                                                      ? BorderSide(
-                                                          width: 2,
-                                                          color: Color(
-                                                              0x004B39EF),
-                                                        )
-                                                      : null,
-                                                  activeColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
-                                                  checkColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
-                                                ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 0.0, 5.0, 30.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'gpheh6qi' /* 5 */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          font: GoogleFonts.roboto(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
-                                          ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Flexible(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        44.0, 33.0, 44.0, 3.0),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: FFAppState().n6Available
-                                            ? Color(0xFF39D2C0)
-                                            : Color(0xFFD81112),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                      ),
-                                      child: Stack(
-                                        children: [
-                                          Stack(
-                                            children: [
-                                              if (FFAppState().n6Available &&
-                                                  !FFAppState().booked)
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          -0.03, 0.01),
-                                                  child: Theme(
-                                                    data: ThemeData(
-                                                      checkboxTheme:
-                                                          CheckboxThemeData(
-                                                        visualDensity:
-                                                            VisualDensity
-                                                                .compact,
-                                                        materialTapTargetSize:
-                                                            MaterialTapTargetSize
-                                                                .shrinkWrap,
-                                                        shape:
-                                                            RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      2.0),
-                                                        ),
+                                        child: Stack(
+                                          children: [
+                                            if (FFAppState().n1Available &&
+                                                !FFAppState().booked)
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -0.03, 0.01),
+                                                child: Theme(
+                                                  data: ThemeData(
+                                                    checkboxTheme:
+                                                        CheckboxThemeData(
+                                                      visualDensity:
+                                                          VisualDensity.compact,
+                                                      materialTapTargetSize:
+                                                          MaterialTapTargetSize
+                                                              .shrinkWrap,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(2.0),
                                                       ),
-                                                      unselectedWidgetColor:
-                                                          Color(0x004B39EF),
                                                     ),
-                                                    child: Checkbox(
-                                                      value: _model
-                                                              .checkbox6Value ??=
-                                                          false,
-                                                      onChanged:
-                                                          (newValue) async {
-                                                        safeSetState(() => _model
-                                                                .checkbox6Value =
-                                                            newValue!);
-                                                        if (newValue!) {
+                                                    unselectedWidgetColor:
+                                                        Color(0x004B39EF),
+                                                  ),
+                                                  child: Checkbox(
+                                                    value: _model
+                                                            .checkbox1Value ??=
+                                                        false,
+                                                    onChanged:
+                                                        (newValue) async {
+                                                      safeSetState(() => _model
+                                                              .checkbox1Value =
+                                                          newValue!);
+                                                      if (newValue!) {
+                                                        FFAppState().selected =
+                                                            FFAppState()
+                                                                    .selected +
+                                                                1;
+                                                        safeSetState(() {});
+                                                        FFAppState().n1 = true;
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        if (FFAppState()
+                                                                .selected >
+                                                            0) {
                                                           FFAppState()
                                                                   .selected =
                                                               FFAppState()
                                                                       .selected +
-                                                                  1;
+                                                                  -1;
                                                           safeSetState(() {});
-                                                          FFAppState().n6 =
-                                                              true;
+                                                          FFAppState().n1 =
+                                                              false;
                                                           safeSetState(() {});
-                                                        } else {
-                                                          if (FFAppState()
-                                                                  .selected >
-                                                              0) {
+                                                        }
+                                                      }
+                                                    },
+                                                    side: (Color(0x004B39EF) !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: Color(
+                                                                0x004B39EF),
+                                                          )
+                                                        : null,
+                                                    activeColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    checkColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                  ),
+                                                ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 0.0, 30.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'kcozyfys' /* 1  */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.roboto(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            if ((_model.podolski1?.succeeded ?? true))
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Flexible(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          44.0, 33.0, 44.0, 3.0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: FFAppState().n2Available
+                                              ? Color(0xFF39D2C0)
+                                              : Color(0xFFD81112),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                        ),
+                                        child: Stack(
+                                          children: [
+                                            if (FFAppState().n2Available &&
+                                                !FFAppState().booked)
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -0.03, 0.01),
+                                                child: Theme(
+                                                  data: ThemeData(
+                                                    checkboxTheme:
+                                                        CheckboxThemeData(
+                                                      visualDensity:
+                                                          VisualDensity.compact,
+                                                      materialTapTargetSize:
+                                                          MaterialTapTargetSize
+                                                              .shrinkWrap,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(2.0),
+                                                      ),
+                                                    ),
+                                                    unselectedWidgetColor:
+                                                        Color(0x004B39EF),
+                                                  ),
+                                                  child: Checkbox(
+                                                    value: _model
+                                                            .checkbox2Value ??=
+                                                        false,
+                                                    onChanged:
+                                                        (newValue) async {
+                                                      safeSetState(() => _model
+                                                              .checkbox2Value =
+                                                          newValue!);
+                                                      if (newValue!) {
+                                                        FFAppState().selected =
+                                                            FFAppState()
+                                                                    .selected +
+                                                                1;
+                                                        safeSetState(() {});
+                                                        FFAppState().n2 = true;
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        if (FFAppState()
+                                                                .selected >
+                                                            0) {
+                                                          FFAppState()
+                                                                  .selected =
+                                                              FFAppState()
+                                                                      .selected +
+                                                                  -1;
+                                                          safeSetState(() {});
+                                                          FFAppState().n2 =
+                                                              false;
+                                                          safeSetState(() {});
+                                                        }
+                                                      }
+                                                    },
+                                                    side: (Color(0x004B39EF) !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: Color(
+                                                                0x004B39EF),
+                                                          )
+                                                        : null,
+                                                    activeColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    checkColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                  ),
+                                                ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        4.0, 0.0, 4.0, 30.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        '7p7hp5z9' /* 2 */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.roboto(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            if ((_model.podolski3?.succeeded ?? true))
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Flexible(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          44.0, 33.0, 44.0, 3.0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: FFAppState().n3Available
+                                              ? Color(0xFF39D2C0)
+                                              : Color(0xFFD81112),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                        ),
+                                        child: Stack(
+                                          children: [
+                                            if (FFAppState().n3Available &&
+                                                !FFAppState().booked)
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -0.03, 0.01),
+                                                child: Theme(
+                                                  data: ThemeData(
+                                                    checkboxTheme:
+                                                        CheckboxThemeData(
+                                                      visualDensity:
+                                                          VisualDensity.compact,
+                                                      materialTapTargetSize:
+                                                          MaterialTapTargetSize
+                                                              .shrinkWrap,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(2.0),
+                                                      ),
+                                                    ),
+                                                    unselectedWidgetColor:
+                                                        Color(0x004B39EF),
+                                                  ),
+                                                  child: Checkbox(
+                                                    value: _model
+                                                            .checkbox3Value ??=
+                                                        false,
+                                                    onChanged:
+                                                        (newValue) async {
+                                                      safeSetState(() => _model
+                                                              .checkbox3Value =
+                                                          newValue!);
+                                                      if (newValue!) {
+                                                        FFAppState().selected =
+                                                            FFAppState()
+                                                                    .selected +
+                                                                1;
+                                                        safeSetState(() {});
+                                                        FFAppState().n3 = true;
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        if (FFAppState()
+                                                                .selected >
+                                                            0) {
+                                                          FFAppState()
+                                                                  .selected =
+                                                              FFAppState()
+                                                                      .selected +
+                                                                  -1;
+                                                          safeSetState(() {});
+                                                          FFAppState().n3 =
+                                                              false;
+                                                          safeSetState(() {});
+                                                        }
+                                                      }
+                                                    },
+                                                    side: (Color(0x004B39EF) !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: Color(
+                                                                0x004B39EF),
+                                                          )
+                                                        : null,
+                                                    activeColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    checkColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                  ),
+                                                ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 5.0, 30.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'y8y9ebvs' /* 3 */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.roboto(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            if ((_model.podolski3?.succeeded ?? true))
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Flexible(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          44.0, 33.0, 44.0, 3.0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: FFAppState().n4Available
+                                              ? Color(0xFF39D2C0)
+                                              : Color(0xFFD81112),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                        ),
+                                        child: Stack(
+                                          children: [
+                                            if (FFAppState().n4Available &&
+                                                !FFAppState().booked)
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -0.03, 0.01),
+                                                child: Theme(
+                                                  data: ThemeData(
+                                                    checkboxTheme:
+                                                        CheckboxThemeData(
+                                                      visualDensity:
+                                                          VisualDensity.compact,
+                                                      materialTapTargetSize:
+                                                          MaterialTapTargetSize
+                                                              .shrinkWrap,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(2.0),
+                                                      ),
+                                                    ),
+                                                    unselectedWidgetColor:
+                                                        Color(0x004B39EF),
+                                                  ),
+                                                  child: Checkbox(
+                                                    value: _model
+                                                            .checkbox4Value ??=
+                                                        false,
+                                                    onChanged:
+                                                        (newValue) async {
+                                                      safeSetState(() => _model
+                                                              .checkbox4Value =
+                                                          newValue!);
+                                                      if (newValue!) {
+                                                        FFAppState().selected =
+                                                            FFAppState()
+                                                                    .selected +
+                                                                1;
+                                                        safeSetState(() {});
+                                                        FFAppState().n4 = true;
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        if (FFAppState()
+                                                                .selected >
+                                                            0) {
+                                                          FFAppState()
+                                                                  .selected =
+                                                              FFAppState()
+                                                                      .selected +
+                                                                  -1;
+                                                          safeSetState(() {});
+                                                          FFAppState().n4 =
+                                                              false;
+                                                          safeSetState(() {});
+                                                        }
+                                                      }
+                                                    },
+                                                    side: (Color(0x004B39EF) !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: Color(
+                                                                0x004B39EF),
+                                                          )
+                                                        : null,
+                                                    activeColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    checkColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                  ),
+                                                ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 5.0, 30.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        '6h1r8ifn' /* 4 */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.roboto(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            if ((_model.podolski4?.succeeded ?? true))
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Flexible(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          44.0, 33.0, 44.0, 3.0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: FFAppState().n5Available
+                                              ? Color(0xFF39D2C0)
+                                              : Color(0xFFD81112),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                        ),
+                                        child: Stack(
+                                          children: [
+                                            if (FFAppState().n5Available &&
+                                                !FFAppState().booked)
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -0.03, 0.01),
+                                                child: Theme(
+                                                  data: ThemeData(
+                                                    checkboxTheme:
+                                                        CheckboxThemeData(
+                                                      visualDensity:
+                                                          VisualDensity.compact,
+                                                      materialTapTargetSize:
+                                                          MaterialTapTargetSize
+                                                              .shrinkWrap,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(2.0),
+                                                      ),
+                                                    ),
+                                                    unselectedWidgetColor:
+                                                        Color(0x004B39EF),
+                                                  ),
+                                                  child: Checkbox(
+                                                    value: _model
+                                                            .checkbox5Value ??=
+                                                        false,
+                                                    onChanged:
+                                                        (newValue) async {
+                                                      safeSetState(() => _model
+                                                              .checkbox5Value =
+                                                          newValue!);
+                                                      if (newValue!) {
+                                                        FFAppState().selected =
+                                                            FFAppState()
+                                                                    .selected +
+                                                                1;
+                                                        safeSetState(() {});
+                                                        FFAppState().n5 = true;
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        if (FFAppState()
+                                                                .selected >
+                                                            0) {
+                                                          FFAppState()
+                                                                  .selected =
+                                                              FFAppState()
+                                                                      .selected +
+                                                                  -1;
+                                                          safeSetState(() {});
+                                                          FFAppState().n5 =
+                                                              false;
+                                                          safeSetState(() {});
+                                                        }
+                                                      }
+                                                    },
+                                                    side: (Color(0x004B39EF) !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: Color(
+                                                                0x004B39EF),
+                                                          )
+                                                        : null,
+                                                    activeColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    checkColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                  ),
+                                                ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 5.0, 30.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'gpheh6qi' /* 5 */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.roboto(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            if ((_model.podolski5?.succeeded ?? true))
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Flexible(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          44.0, 33.0, 44.0, 3.0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: FFAppState().n6Available
+                                              ? Color(0xFF39D2C0)
+                                              : Color(0xFFD81112),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                        ),
+                                        child: Stack(
+                                          children: [
+                                            Stack(
+                                              children: [
+                                                if (FFAppState().n6Available &&
+                                                    !FFAppState().booked)
+                                                  Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            -0.03, 0.01),
+                                                    child: Theme(
+                                                      data: ThemeData(
+                                                        checkboxTheme:
+                                                            CheckboxThemeData(
+                                                          visualDensity:
+                                                              VisualDensity
+                                                                  .compact,
+                                                          materialTapTargetSize:
+                                                              MaterialTapTargetSize
+                                                                  .shrinkWrap,
+                                                          shape:
+                                                              RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        2.0),
+                                                          ),
+                                                        ),
+                                                        unselectedWidgetColor:
+                                                            Color(0x004B39EF),
+                                                      ),
+                                                      child: Checkbox(
+                                                        value: _model
+                                                                .checkbox6Value ??=
+                                                            false,
+                                                        onChanged:
+                                                            (newValue) async {
+                                                          safeSetState(() =>
+                                                              _model.checkbox6Value =
+                                                                  newValue!);
+                                                          if (newValue!) {
                                                             FFAppState()
                                                                     .selected =
                                                                 FFAppState()
                                                                         .selected +
-                                                                    -1;
+                                                                    1;
                                                             safeSetState(() {});
                                                             FFAppState().n6 =
-                                                                false;
+                                                                true;
                                                             safeSetState(() {});
+                                                          } else {
+                                                            if (FFAppState()
+                                                                    .selected >
+                                                                0) {
+                                                              FFAppState()
+                                                                      .selected =
+                                                                  FFAppState()
+                                                                          .selected +
+                                                                      -1;
+                                                              safeSetState(
+                                                                  () {});
+                                                              FFAppState().n6 =
+                                                                  false;
+                                                              safeSetState(
+                                                                  () {});
+                                                            }
                                                           }
-                                                        }
-                                                      },
-                                                      side:
-                                                          (Color(0x004B39EF) !=
-                                                                  null)
-                                                              ? BorderSide(
-                                                                  width: 2,
-                                                                  color: Color(
-                                                                      0x004B39EF),
-                                                                )
-                                                              : null,
-                                                      activeColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      checkColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryBackground,
+                                                        },
+                                                        side:
+                                                            (Color(0x004B39EF) !=
+                                                                    null)
+                                                                ? BorderSide(
+                                                                    width: 2,
+                                                                    color: Color(
+                                                                        0x004B39EF),
+                                                                  )
+                                                                : null,
+                                                        activeColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        checkColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBackground,
+                                                      ),
                                                     ),
                                                   ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 5.0, 30.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'iwefk9va' /* 6 */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.roboto(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            if ((_model.podolski6?.succeeded ?? true))
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Flexible(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          44.0, 33.0, 44.0, 3.0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: FFAppState().n7Available
+                                              ? Color(0xFF39D2C0)
+                                              : Color(0xFFD81112),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                        ),
+                                        child: Stack(
+                                          children: [
+                                            if (FFAppState().n7Available &&
+                                                !FFAppState().booked)
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -0.03, 0.01),
+                                                child: Theme(
+                                                  data: ThemeData(
+                                                    checkboxTheme:
+                                                        CheckboxThemeData(
+                                                      visualDensity:
+                                                          VisualDensity.compact,
+                                                      materialTapTargetSize:
+                                                          MaterialTapTargetSize
+                                                              .shrinkWrap,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(2.0),
+                                                      ),
+                                                    ),
+                                                    unselectedWidgetColor:
+                                                        Color(0x004B39EF),
+                                                  ),
+                                                  child: Checkbox(
+                                                    value: _model
+                                                            .checkbox7Value ??=
+                                                        false,
+                                                    onChanged:
+                                                        (newValue) async {
+                                                      safeSetState(() => _model
+                                                              .checkbox7Value =
+                                                          newValue!);
+                                                      if (newValue!) {
+                                                        FFAppState().selected =
+                                                            FFAppState()
+                                                                    .selected +
+                                                                1;
+                                                        safeSetState(() {});
+                                                        FFAppState().n7 = true;
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        if (FFAppState()
+                                                                .selected >
+                                                            0) {
+                                                          FFAppState()
+                                                                  .selected =
+                                                              FFAppState()
+                                                                      .selected +
+                                                                  -1;
+                                                          safeSetState(() {});
+                                                          FFAppState().n7 =
+                                                              false;
+                                                          safeSetState(() {});
+                                                        }
+                                                      }
+                                                    },
+                                                    side: (Color(0x004B39EF) !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: Color(
+                                                                0x004B39EF),
+                                                          )
+                                                        : null,
+                                                    activeColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    checkColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                  ),
                                                 ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 5.0, 30.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'ry9gu419' /* 7 */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.roboto(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            if ((_model.podolski7?.succeeded ?? true))
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Flexible(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          44.0, 33.0, 44.0, 3.0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: FFAppState().n8Available
+                                              ? Color(0xFF39D2C0)
+                                              : Color(0xFFD81112),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                        ),
+                                        child: Stack(
+                                          children: [
+                                            if (FFAppState().n8Available &&
+                                                !FFAppState().booked)
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -0.03, 0.01),
+                                                child: Theme(
+                                                  data: ThemeData(
+                                                    checkboxTheme:
+                                                        CheckboxThemeData(
+                                                      visualDensity:
+                                                          VisualDensity.compact,
+                                                      materialTapTargetSize:
+                                                          MaterialTapTargetSize
+                                                              .shrinkWrap,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(2.0),
+                                                      ),
+                                                    ),
+                                                    unselectedWidgetColor:
+                                                        Color(0x004B39EF),
+                                                  ),
+                                                  child: Checkbox(
+                                                    value: _model
+                                                            .checkbox8Value ??=
+                                                        false,
+                                                    onChanged:
+                                                        (newValue) async {
+                                                      safeSetState(() => _model
+                                                              .checkbox8Value =
+                                                          newValue!);
+                                                      if (newValue!) {
+                                                        FFAppState().selected =
+                                                            FFAppState()
+                                                                    .selected +
+                                                                1;
+                                                        safeSetState(() {});
+                                                        FFAppState().n8 = true;
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        if (FFAppState()
+                                                                .selected >
+                                                            0) {
+                                                          FFAppState()
+                                                                  .selected =
+                                                              FFAppState()
+                                                                      .selected +
+                                                                  -1;
+                                                          safeSetState(() {});
+                                                          FFAppState().n8 =
+                                                              false;
+                                                          safeSetState(() {});
+                                                        }
+                                                      }
+                                                    },
+                                                    side: (Color(0x004B39EF) !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: Color(
+                                                                0x004B39EF),
+                                                          )
+                                                        : null,
+                                                    activeColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    checkColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                  ),
+                                                ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 5.0, 30.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'li1bmya7' /* 8 */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.roboto(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            if ((_model.podolski8?.succeeded ?? true))
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Flexible(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          44.0, 33.0, 44.0, 3.0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: FFAppState().n9Available
+                                              ? Color(0xFF39D2C0)
+                                              : Color(0xFFD81112),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                        ),
+                                        child: Stack(
+                                          children: [
+                                            if (FFAppState().n9Available &&
+                                                !FFAppState().booked)
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -0.03, 0.01),
+                                                child: Theme(
+                                                  data: ThemeData(
+                                                    checkboxTheme:
+                                                        CheckboxThemeData(
+                                                      visualDensity:
+                                                          VisualDensity.compact,
+                                                      materialTapTargetSize:
+                                                          MaterialTapTargetSize
+                                                              .shrinkWrap,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(2.0),
+                                                      ),
+                                                    ),
+                                                    unselectedWidgetColor:
+                                                        Color(0x004B39EF),
+                                                  ),
+                                                  child: Checkbox(
+                                                    value: _model
+                                                            .checkbox9Value ??=
+                                                        false,
+                                                    onChanged:
+                                                        (newValue) async {
+                                                      safeSetState(() => _model
+                                                              .checkbox9Value =
+                                                          newValue!);
+                                                      if (newValue!) {
+                                                        FFAppState().selected =
+                                                            FFAppState()
+                                                                    .selected +
+                                                                1;
+                                                        safeSetState(() {});
+                                                        FFAppState().n9 = true;
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        if (FFAppState()
+                                                                .selected >
+                                                            0) {
+                                                          FFAppState()
+                                                                  .selected =
+                                                              FFAppState()
+                                                                      .selected +
+                                                                  -1;
+                                                          safeSetState(() {});
+                                                          FFAppState().n9 =
+                                                              false;
+                                                          safeSetState(() {});
+                                                        }
+                                                      }
+                                                    },
+                                                    side: (Color(0x004B39EF) !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: Color(
+                                                                0x004B39EF),
+                                                          )
+                                                        : null,
+                                                    activeColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    checkColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                  ),
+                                                ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 5.0, 30.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'lcclx3kd' /* 9 */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.roboto(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            if (valueOrDefault<bool>(
+                                currentUserDocument?.n10appears, false))
+                              AuthUserStreamWidget(
+                                builder: (context) => Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Flexible(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            44.0, 33.0, 44.0, 3.0),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: FFAppState().n1Available
+                                                ? Color(0xFF39D2C0)
+                                                : Color(0xFFD81112),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              width: 2.0,
+                                            ),
+                                          ),
+                                          child: Stack(
+                                            children: [
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -0.03, 0.01),
+                                                child: Theme(
+                                                  data: ThemeData(
+                                                    checkboxTheme:
+                                                        CheckboxThemeData(
+                                                      visualDensity:
+                                                          VisualDensity.compact,
+                                                      materialTapTargetSize:
+                                                          MaterialTapTargetSize
+                                                              .shrinkWrap,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(2.0),
+                                                      ),
+                                                    ),
+                                                    unselectedWidgetColor:
+                                                        Color(0x004B39EF),
+                                                  ),
+                                                  child: Checkbox(
+                                                    value: _model
+                                                            .checkbox10Value ??=
+                                                        false,
+                                                    onChanged:
+                                                        (newValue) async {
+                                                      safeSetState(() => _model
+                                                              .checkbox10Value =
+                                                          newValue!);
+                                                    },
+                                                    side: (Color(0x004B39EF) !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: Color(
+                                                                0x004B39EF),
+                                                          )
+                                                        : null,
+                                                    activeColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    checkColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                  ),
+                                                ),
+                                              ),
                                             ],
                                           ),
-                                        ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 0.0, 5.0, 30.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'iwefk9va' /* 6 */,
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 30.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'v33a8txe' /* 10 */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .override(
+                                              font: GoogleFonts.roboto(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          font: GoogleFonts.roboto(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
+                                  ],
+                                ),
+                              ),
+                            if (valueOrDefault<bool>(
+                                currentUserDocument?.n11appears, false))
+                              AuthUserStreamWidget(
+                                builder: (context) => Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Flexible(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            44.0, 33.0, 44.0, 3.0),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: FFAppState().n1Available
+                                                ? Color(0xFF39D2C0)
+                                                : Color(0xFFD81112),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              width: 2.0,
+                                            ),
                                           ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Flexible(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        44.0, 33.0, 44.0, 3.0),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: FFAppState().n7Available
-                                            ? Color(0xFF39D2C0)
-                                            : Color(0xFFD81112),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                      ),
-                                      child: Stack(
-                                        children: [
-                                          if (FFAppState().n7Available &&
-                                              !FFAppState().booked)
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  -0.03, 0.01),
-                                              child: Theme(
-                                                data: ThemeData(
-                                                  checkboxTheme:
-                                                      CheckboxThemeData(
-                                                    visualDensity:
-                                                        VisualDensity.compact,
-                                                    materialTapTargetSize:
-                                                        MaterialTapTargetSize
-                                                            .shrinkWrap,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              2.0),
+                                          child: Stack(
+                                            children: [
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -0.03, 0.01),
+                                                child: Theme(
+                                                  data: ThemeData(
+                                                    checkboxTheme:
+                                                        CheckboxThemeData(
+                                                      visualDensity:
+                                                          VisualDensity.compact,
+                                                      materialTapTargetSize:
+                                                          MaterialTapTargetSize
+                                                              .shrinkWrap,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(2.0),
+                                                      ),
                                                     ),
+                                                    unselectedWidgetColor:
+                                                        Color(0x004B39EF),
                                                   ),
-                                                  unselectedWidgetColor:
-                                                      Color(0x004B39EF),
-                                                ),
-                                                child: Checkbox(
-                                                  value: _model
-                                                      .checkbox7Value ??= false,
-                                                  onChanged: (newValue) async {
-                                                    safeSetState(() =>
-                                                        _model.checkbox7Value =
-                                                            newValue!);
-                                                    if (newValue!) {
-                                                      FFAppState().selected =
-                                                          FFAppState()
-                                                                  .selected +
-                                                              1;
-                                                      safeSetState(() {});
-                                                      FFAppState().n7 = true;
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      if (FFAppState()
-                                                              .selected >
-                                                          0) {
-                                                        FFAppState().selected =
-                                                            FFAppState()
-                                                                    .selected +
-                                                                -1;
-                                                        safeSetState(() {});
-                                                        FFAppState().n7 = false;
-                                                        safeSetState(() {});
-                                                      }
-                                                    }
-                                                  },
-                                                  side: (Color(0x004B39EF) !=
-                                                          null)
-                                                      ? BorderSide(
-                                                          width: 2,
-                                                          color: Color(
-                                                              0x004B39EF),
-                                                        )
-                                                      : null,
-                                                  activeColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
-                                                  checkColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
+                                                  child: Checkbox(
+                                                    value: _model
+                                                            .checkbox11Value ??=
+                                                        false,
+                                                    onChanged:
+                                                        (newValue) async {
+                                                      safeSetState(() => _model
+                                                              .checkbox11Value =
+                                                          newValue!);
+                                                    },
+                                                    side: (Color(0x004B39EF) !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: Color(
+                                                                0x004B39EF),
+                                                          )
+                                                        : null,
+                                                    activeColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    checkColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 0.0, 5.0, 30.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'ry9gu419' /* 7 */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          font: GoogleFonts.roboto(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
+                                            ],
                                           ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Flexible(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        44.0, 33.0, 44.0, 3.0),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: FFAppState().n8Available
-                                            ? Color(0xFF39D2C0)
-                                            : Color(0xFFD81112),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
                                         ),
                                       ),
-                                      child: Stack(
-                                        children: [
-                                          if (FFAppState().n8Available &&
-                                              !FFAppState().booked)
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  -0.03, 0.01),
-                                              child: Theme(
-                                                data: ThemeData(
-                                                  checkboxTheme:
-                                                      CheckboxThemeData(
-                                                    visualDensity:
-                                                        VisualDensity.compact,
-                                                    materialTapTargetSize:
-                                                        MaterialTapTargetSize
-                                                            .shrinkWrap,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              2.0),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 30.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'ok6o455h' /* 11 */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .override(
+                                              font: GoogleFonts.roboto(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            if (valueOrDefault<bool>(
+                                currentUserDocument?.n12appears, false))
+                              AuthUserStreamWidget(
+                                builder: (context) => Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Flexible(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            44.0, 33.0, 44.0, 3.0),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: FFAppState().n1Available
+                                                ? Color(0xFF39D2C0)
+                                                : Color(0xFFD81112),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              width: 2.0,
+                                            ),
+                                          ),
+                                          child: Stack(
+                                            children: [
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -0.03, 0.01),
+                                                child: Theme(
+                                                  data: ThemeData(
+                                                    checkboxTheme:
+                                                        CheckboxThemeData(
+                                                      visualDensity:
+                                                          VisualDensity.compact,
+                                                      materialTapTargetSize:
+                                                          MaterialTapTargetSize
+                                                              .shrinkWrap,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(2.0),
+                                                      ),
                                                     ),
+                                                    unselectedWidgetColor:
+                                                        Color(0x004B39EF),
                                                   ),
-                                                  unselectedWidgetColor:
-                                                      Color(0x004B39EF),
-                                                ),
-                                                child: Checkbox(
-                                                  value: _model
-                                                      .checkbox8Value ??= false,
-                                                  onChanged: (newValue) async {
-                                                    safeSetState(() =>
-                                                        _model.checkbox8Value =
-                                                            newValue!);
-                                                    if (newValue!) {
-                                                      FFAppState().selected =
-                                                          FFAppState()
-                                                                  .selected +
-                                                              1;
-                                                      safeSetState(() {});
-                                                      FFAppState().n8 = true;
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      if (FFAppState()
-                                                              .selected >
-                                                          0) {
-                                                        FFAppState().selected =
-                                                            FFAppState()
-                                                                    .selected +
-                                                                -1;
-                                                        safeSetState(() {});
-                                                        FFAppState().n8 = false;
-                                                        safeSetState(() {});
-                                                      }
-                                                    }
-                                                  },
-                                                  side: (Color(0x004B39EF) !=
-                                                          null)
-                                                      ? BorderSide(
-                                                          width: 2,
-                                                          color: Color(
-                                                              0x004B39EF),
-                                                        )
-                                                      : null,
-                                                  activeColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
-                                                  checkColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
+                                                  child: Checkbox(
+                                                    value: _model
+                                                            .checkbox12Value ??=
+                                                        false,
+                                                    onChanged:
+                                                        (newValue) async {
+                                                      safeSetState(() => _model
+                                                              .checkbox12Value =
+                                                          newValue!);
+                                                    },
+                                                    side: (Color(0x004B39EF) !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: Color(
+                                                                0x004B39EF),
+                                                          )
+                                                        : null,
+                                                    activeColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    checkColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 0.0, 5.0, 30.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'li1bmya7' /* 8 */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          font: GoogleFonts.roboto(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
+                                            ],
                                           ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Flexible(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        44.0, 33.0, 44.0, 3.0),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: FFAppState().n9Available
-                                            ? Color(0xFF39D2C0)
-                                            : Color(0xFFD81112),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
                                         ),
                                       ),
-                                      child: Stack(
-                                        children: [
-                                          if (FFAppState().n9Available &&
-                                              !FFAppState().booked)
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  -0.03, 0.01),
-                                              child: Theme(
-                                                data: ThemeData(
-                                                  checkboxTheme:
-                                                      CheckboxThemeData(
-                                                    visualDensity:
-                                                        VisualDensity.compact,
-                                                    materialTapTargetSize:
-                                                        MaterialTapTargetSize
-                                                            .shrinkWrap,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              2.0),
-                                                    ),
-                                                  ),
-                                                  unselectedWidgetColor:
-                                                      Color(0x004B39EF),
-                                                ),
-                                                child: Checkbox(
-                                                  value: _model
-                                                      .checkbox9Value ??= false,
-                                                  onChanged: (newValue) async {
-                                                    safeSetState(() =>
-                                                        _model.checkbox9Value =
-                                                            newValue!);
-                                                    if (newValue!) {
-                                                      FFAppState().selected =
-                                                          FFAppState()
-                                                                  .selected +
-                                                              1;
-                                                      safeSetState(() {});
-                                                      FFAppState().n9 = true;
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      if (FFAppState()
-                                                              .selected >
-                                                          0) {
-                                                        FFAppState().selected =
-                                                            FFAppState()
-                                                                    .selected +
-                                                                -1;
-                                                        safeSetState(() {});
-                                                        FFAppState().n9 = false;
-                                                        safeSetState(() {});
-                                                      }
-                                                    }
-                                                  },
-                                                  side: (Color(0x004B39EF) !=
-                                                          null)
-                                                      ? BorderSide(
-                                                          width: 2,
-                                                          color: Color(
-                                                              0x004B39EF),
-                                                        )
-                                                      : null,
-                                                  activeColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
-                                                  checkColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
-                                                ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 30.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          '2au50yii' /* 12 */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .override(
+                                              font: GoogleFonts.roboto(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontStyle,
                                               ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
                                             ),
-                                        ],
                                       ),
                                     ),
-                                  ),
+                                  ],
                                 ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 0.0, 5.0, 30.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'lcclx3kd' /* 9 */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          font: GoogleFonts.roboto(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
-                                          ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
                           ],
                         ),
                       ],

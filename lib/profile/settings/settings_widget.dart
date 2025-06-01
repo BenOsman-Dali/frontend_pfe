@@ -523,26 +523,60 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 bookedSpotID: null,
                               );
                             }
-                          }
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                'Reservation cancelled ',
-                                style: TextStyle(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  'Reservation cancelled ',
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                  ),
                                 ),
+                                duration: Duration(milliseconds: 4000),
+                                backgroundColor:
+                                    FlutterFlowTheme.of(context).secondary,
                               ),
-                              duration: Duration(milliseconds: 4000),
-                              backgroundColor:
-                                  FlutterFlowTheme.of(context).secondary,
-                            ),
-                          );
+                            );
+                          }
                         }),
                         Future(() async {
                           await currentUserReference!
                               .update(createUserDetailsRecordData(
                             bookedToday: false,
+                            n1: false,
+                            n2: false,
+                            n3: false,
+                            n4: false,
+                            n5: false,
+                            n6: false,
+                            n7: false,
+                            n8: false,
+                            n9: false,
+                            n10: false,
+                            n11: false,
+                            n12: false,
+                            c1: false,
+                            c2: false,
+                            c3: false,
+                            c4: false,
+                            c5: false,
+                            c6: false,
+                            c7: false,
+                            c8: false,
+                            c9: false,
+                            c11: false,
+                            c12: false,
+                            b1: false,
+                            b2: false,
+                            b3: false,
+                            b4: false,
+                            b5: false,
+                            b6: false,
+                            b7: false,
+                            b8: false,
+                            b9: false,
+                            neuchatel: false,
+                            constance: false,
                           ));
                         }),
                       ]);

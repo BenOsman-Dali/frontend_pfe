@@ -192,7 +192,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 getCurrentTimestamp,
                 locale: FFLocalizations.of(context).languageCode,
               ) ==
-              '13:09') {
+              '00:00') {
             await currentUserReference!.update(createUserDetailsRecordData(
               bookedToday: false,
             ));
@@ -741,7 +741,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       children: [
                                         Text(
                                           FFLocalizations.of(context).getText(
-                                            'i8ikcg4b' /* Your booking details: */,
+                                            'i8ikcg4b' /* Your latest booking details */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -810,18 +810,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  if (getJsonField(
-                                                        (_model.apiResultlcs
-                                                                ?.jsonBody ??
-                                                            ''),
-                                                        r'''$.bookingSpotId''',
-                                                      ) ==
-                                                      getJsonField(
-                                                        (_model.apiResultzg1
-                                                                ?.jsonBody ??
-                                                            ''),
-                                                        r'''$[0].spot_id''',
-                                                      ))
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.n1,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -856,18 +847,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (getJsonField(
-                                                        (_model.apiResultlcs
-                                                                ?.jsonBody ??
-                                                            ''),
-                                                        r'''$.bookingSpotId''',
-                                                      ) ==
-                                                      getJsonField(
-                                                        (_model.apiResultzg1
-                                                                ?.jsonBody ??
-                                                            ''),
-                                                        r'''$[1].spot_id''',
-                                                      ))
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.n2,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -899,7 +881,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().n3)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.n3,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -931,7 +915,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().n4)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.n4,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -963,7 +949,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().n5)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.n5,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -995,7 +983,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().n6)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.n6,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1027,7 +1017,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().n7)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.n7,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1059,7 +1051,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().n8)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.n8,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1091,7 +1085,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().n9)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.n9,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1123,7 +1119,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().c1)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.c1,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1155,7 +1153,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().c2)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.c2,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1187,7 +1187,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().c3)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.c3,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1219,7 +1221,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().c4)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.c4,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1251,7 +1255,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().c5)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.c5,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1283,7 +1289,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().c6)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.c6,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1315,7 +1323,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().c7)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.c7,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1347,7 +1357,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().c8)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.c8,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1379,7 +1391,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().c9)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.c9,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1411,7 +1425,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().b1)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.b1,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1443,7 +1459,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().b2)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.b2,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1475,7 +1493,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().b3)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.b3,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1507,7 +1527,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().b4)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.b4,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1539,7 +1561,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().b5)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.b5,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1571,7 +1595,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().b6)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.b6,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1635,7 +1661,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().b8)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.b8,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1667,7 +1695,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .fontStyle,
                                                           ),
                                                     ),
-                                                  if (FFAppState().b9)
+                                                  if (valueOrDefault<bool>(
+                                                      currentUserDocument?.b9,
+                                                      false))
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1814,30 +1844,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                             .fontStyle,
                                                   ),
                                             ),
-                                            if ((getJsonField(
-                                                      (_model.apiResultlcs
-                                                              ?.jsonBody ??
-                                                          ''),
-                                                      r'''$.bookingSpotId''',
-                                                    ) ==
-                                                    getJsonField(
-                                                      (_model.apiResultzg1
-                                                              ?.jsonBody ??
-                                                          ''),
-                                                      r'''$[0].spot_id''',
-                                                    )) ||
-                                                (getJsonField(
-                                                      (_model.apiResultlcs
-                                                              ?.jsonBody ??
-                                                          ''),
-                                                      r'''$.bookingSpotId''',
-                                                    ) ==
-                                                    getJsonField(
-                                                      (_model.apiResultzg1
-                                                              ?.jsonBody ??
-                                                          ''),
-                                                      r'''$[1].spot_id''',
-                                                    )))
+                                            if (valueOrDefault<bool>(
+                                                currentUserDocument?.neuchatel,
+                                                false))
                                               Align(
                                                 alignment: AlignmentDirectional(
                                                     0.0, 0.0),
@@ -1876,7 +1885,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                       ),
                                                 ),
                                               ),
-                                            if (FFAppState().constance)
+                                            if (valueOrDefault<bool>(
+                                                currentUserDocument?.constance,
+                                                false))
                                               Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1906,7 +1917,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                   .fontStyle,
                                                         ),
                                               ),
-                                            if (FFAppState().biwa)
+                                            if (valueOrDefault<bool>(
+                                                currentUserDocument?.biwa,
+                                                false))
                                               Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -2022,26 +2035,30 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                   ),
                 ),
-                Text(
-                  FFLocalizations.of(context).getText(
-                    'frk0oi3o' /* Parking Spot Availability Toda... */,
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        font: GoogleFonts.roboto(
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                  child: Text(
+                    FFLocalizations.of(context).getText(
+                      '69kwoow9' /* Parking Spot Availability Toda... */,
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          font: GoogleFonts.roboto(
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
+                          fontSize: 25.0,
+                          letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
                           fontStyle:
                               FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                         ),
-                        fontSize: 20.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.bold,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                      ),
+                  ),
                 ),
                 Container(
                   width: 370.0,
-                  height: 317.19,
+                  height: 368.4,
                   child: Stack(
                     children: [
                       FlutterFlowPieChart(
@@ -2054,7 +2071,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                             Color(0xFFFB0202),
                             FlutterFlowTheme.of(context).secondary
                           ],
-                          radius: [100.0, 100.0],
+                          radius: [150.0, 150.0],
                         ),
                         donutHoleRadius: 0.0,
                         donutHoleColor: Colors.transparent,
@@ -2086,12 +2103,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                             LegendEntry(
                                 Color(0xFFFB0202),
                                 FFLocalizations.of(context).getText(
-                                  'ijuot70u' /* Booked */,
+                                  'jfcucgu6' /* Booked */,
                                 )),
                             LegendEntry(
                                 FlutterFlowTheme.of(context).secondary,
                                 FFLocalizations.of(context).getText(
-                                  '4glf1kci' /* Available */,
+                                  'i093fj9z' /* Available */,
                                 )),
                           ],
                           width: 100.0,

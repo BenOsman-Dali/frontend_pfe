@@ -11,8 +11,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 /// Start SpotsManagementAPI Group Code
 
 class SpotsManagementAPIGroup {
-  static String getBaseUrl() =>
-      'https://f0cb-2c0f-f698-4144-408e-1d20-fa20-9a24-1504.ngrok-free.app';
+  static String getBaseUrl() => 'https://8a88-197-17-16-165.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -169,11 +168,13 @@ class CreateParkingSpotCall {
     String? department = '',
     int? number,
     bool? available = true,
+    int? spotId,
   }) async {
     final baseUrl = SpotsManagementAPIGroup.getBaseUrl();
 
     final ffApiRequestBody = '''
 {
+  "spot_id": ${spotId},
   "department": "${escapeStringForJson(department)}",
   "number": ${number},
   "available": ${available}
@@ -288,8 +289,7 @@ class NonBookedPercentageCall {
 /// Start UserManagementAPI Group Code
 
 class UserManagementAPIGroup {
-  static String getBaseUrl() =>
-      'https://f0cb-2c0f-f698-4144-408e-1d20-fa20-9a24-1504.ngrok-free.app';
+  static String getBaseUrl() => 'https://8a88-197-17-16-165.ngrok-free.app';
   static Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -351,6 +351,10 @@ class GetUserByIdCall {
         response,
         r'''$.bookedSpotId''',
       ));
+  dynamic hey(dynamic response) => getJsonField(
+        response,
+        r'''$''',
+      );
 }
 
 class UpdateUserCall {
