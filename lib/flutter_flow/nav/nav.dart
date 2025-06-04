@@ -96,15 +96,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => EditProfileWidget(),
         ),
         FFRoute(
-          name: BookingNeuchatelWidget.routeName,
-          path: BookingNeuchatelWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'booking_neuchatel')
-              : NavBarPage(
-                  initialPage: 'booking_neuchatel',
-                  page: BookingNeuchatelWidget(),
-                ),
-        ),
+            name: BookingNeuchatelWidget.routeName,
+            path: BookingNeuchatelWidget.routePath,
+            builder: (context, params) => params.isEmpty
+                ? NavBarPage(initialPage: 'booking_neuchatel')
+                : NavBarPage(
+                    initialPage: 'booking_neuchatel',
+                    page: BookingNeuchatelWidget(),
+                  )),
         FFRoute(
           name: RecoverPasswordWidget.routeName,
           path: RecoverPasswordWidget.routePath,
@@ -121,15 +120,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => CheckoutWidget(),
         ),
         FFRoute(
-          name: SettingsWidget.routeName,
-          path: SettingsWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'settings')
-              : NavBarPage(
-                  initialPage: 'settings',
-                  page: SettingsWidget(),
-                ),
-        ),
+            name: SettingsWidget.routeName,
+            path: SettingsWidget.routePath,
+            builder: (context, params) => params.isEmpty
+                ? NavBarPage(initialPage: 'settings')
+                : NavBarPage(
+                    initialPage: 'settings',
+                    page: SettingsWidget(),
+                  )),
         FFRoute(
           name: SigninWidget.routeName,
           path: SigninWidget.routePath,
@@ -151,15 +149,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => TermsWidget(),
         ),
         FFRoute(
-          name: RemindersWidget.routeName,
-          path: RemindersWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'reminders')
-              : NavBarPage(
-                  initialPage: 'reminders',
-                  page: RemindersWidget(),
-                ),
-        ),
+            name: RemindersWidget.routeName,
+            path: RemindersWidget.routePath,
+            builder: (context, params) => params.isEmpty
+                ? NavBarPage(initialPage: 'reminders')
+                : NavBarPage(
+                    initialPage: 'reminders',
+                    page: RemindersWidget(),
+                  )),
         FFRoute(
           name: AddedReminderWidget.routeName,
           path: AddedReminderWidget.routePath,
@@ -171,21 +168,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ConfirmationWidget(),
         ),
         FFRoute(
-          name: BookingConstanceWidget.routeName,
-          path: BookingConstanceWidget.routePath,
-          builder: (context, params) => NavBarPage(
-            initialPage: '',
-            page: BookingConstanceWidget(),
-          ),
-        ),
+            name: BookingConstanceWidget.routeName,
+            path: BookingConstanceWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: BookingConstanceWidget(),
+                )),
         FFRoute(
-          name: BookingBiwaWidget.routeName,
-          path: BookingBiwaWidget.routePath,
-          builder: (context, params) => NavBarPage(
-            initialPage: '',
-            page: BookingBiwaWidget(),
-          ),
-        ),
+            name: BookingBiwaWidget.routeName,
+            path: BookingBiwaWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: BookingBiwaWidget(),
+                )),
         FFRoute(
           name: UserDetailsWidget.routeName,
           path: UserDetailsWidget.routePath,
